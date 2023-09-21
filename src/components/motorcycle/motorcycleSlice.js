@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchMotorcycle = createAsyncThunk('get/ferchMortcycle', async () => {
   try {
-    const motorcycleData = await fetch('http://localhost:3000/api/v1/motorcycle');
+    const motorcycleData = await fetch('http://localhost:3000/api/v1/motorcycles');
     const dataJson = motorcycleData.json();
     return dataJson;
   } catch (error) {
@@ -12,7 +12,7 @@ export const fetchMotorcycle = createAsyncThunk('get/ferchMortcycle', async () =
 
 export const fetchSpecificMotorcycle = createAsyncThunk('get/fetchSpecificMotorcycle', async (id) => {
   try {
-    const motorcycleData = await fetch(`http://localhost:3000/api/v1/motorcycle/${id}`);
+    const motorcycleData = await fetch(`http://localhost:3000/api/v1/motorcycles${id}`);
     const dataJson = motorcycleData.json();
     return dataJson;
   } catch (error) {
