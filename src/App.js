@@ -1,42 +1,18 @@
-import './App.css';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Provider } from 'react-redux';
-import store from './app/store';
-import Motorcycle from './components/motorcycle/Motorcycle';
-import Detail from './components/motorcycle/Detail';
-import Layout from './layout/Layout';
-import Login from './components/login/Login';
+import LoginPage from './components/login/Login-page';
+import store from './redux/store';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <Layout />,
-    children: [
-      {
-        path: '/login',
-        element: <Login />,
-      },
-      {
-        path: '/motorcycle',
-        element: <Motorcycle />,
-      },
-      {
-        path: '/motorcycle/:id',
-        element: <Detail />,
-        loader: async ({ params }) => params,
-      },
-    ],
-  },
-]);
-
-function App() {
-  return (
-    <div className="App">
-      <Provider store={store}>
-        <RouterProvider router={router} />
-      </Provider>
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <Provider store={store}>
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<LoginPage />} />
+        </Routes>
+      </BrowserRouter>
+    </Provider>
+  </div>
+);
 
 export default App;
