@@ -5,12 +5,17 @@ import store from './app/store';
 import Motorcycle from './components/motorcycle/Motorcycle';
 import Detail from './components/motorcycle/Detail';
 import Layout from './layout/Layout';
+import Login from './components/login/Login';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Layout />,
     children: [
+      {
+        path: '/login',
+        element: <Login />,
+      },
       {
         path: '/motorcycle',
         element: <Motorcycle />,

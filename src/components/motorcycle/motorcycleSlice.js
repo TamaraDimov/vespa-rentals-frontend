@@ -1,24 +1,34 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 
-export const fetchMotorcycle = createAsyncThunk('get/ferchMortcycle', async () => {
-  try {
-    const motorcycleData = await fetch('http://localhost:3000/api/v1/motorcycles');
-    const dataJson = motorcycleData.json();
-    return dataJson;
-  } catch (error) {
-    return error;
-  }
-});
+export const fetchMotorcycle = createAsyncThunk(
+  'get/ferchMortcycle',
+  async () => {
+    try {
+      const motorcycleData = await fetch(
+        'http://localhost:3000/api/v1/motorcycles',
+      );
+      const dataJson = motorcycleData.json();
+      return dataJson;
+    } catch (error) {
+      return error;
+    }
+  },
+);
 
-export const fetchSpecificMotorcycle = createAsyncThunk('get/fetchSpecificMotorcycle', async (id) => {
-  try {
-    const motorcycleData = await fetch(`http://localhost:3000/api/v1/motorcycles${id}`);
-    const dataJson = motorcycleData.json();
-    return dataJson;
-  } catch (error) {
-    return error;
-  }
-});
+export const fetchSpecificMotorcycle = createAsyncThunk(
+  'get/fetchSpecificMotorcycle',
+  async (id) => {
+    try {
+      const motorcycleData = await fetch(
+        `http://localhost:3000/api/v1/motorcycles${id}`,
+      );
+      const dataJson = motorcycleData.json();
+      return dataJson;
+    } catch (error) {
+      return error;
+    }
+  },
+);
 
 const motorcycleSlice = createSlice({
   name: 'motorcycle',

@@ -10,14 +10,14 @@ export default function Motorcycle() {
     dispatch(fetchMotorcycle());
   }, [dispatch]);
 
-  const Succes = () => motorcycle.motorcycle.map((item) => <p key={item.id}>{item.name}</p>);
+  const Succes = () => {
+    motorcycle.motorcycle.map((item) => <p key={item.id}>{item.name}</p>);
 
-  return (
-    <div>
-      <h1>Motorcycle page</h1>
-      {
-        motorcycle.status ? <Succes /> : 'Loading...'
-      }
-    </div>
-  );
+    return (
+      <div>
+        <h1>Motorcycle page</h1>
+        {motorcycle.status ? <Succes /> : 'Loading...'}
+      </div>
+    );
+  };
 }
