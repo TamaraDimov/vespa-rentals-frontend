@@ -9,7 +9,7 @@ export default function Detail() {
 
   useEffect(() => {
     dispatch(fetchSpecificMotorcycle(motorcycleId.id));
-  }, [dispatch]);
+  }, [dispatch, motorcycleId]);
 
   return (
     <div>
