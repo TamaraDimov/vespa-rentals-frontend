@@ -18,6 +18,7 @@ const router = createBrowserRouter([
       {
         path: '/motorcycle/:id',
         element: <Detail />,
+        loader: async ({ params }) => params,
       },
     ],
   },

@@ -14,7 +14,7 @@ export default function Motorcycle() {
 
   return (
     <div>
-      <h1>Welcom</h1>
+      <h1>Motorcycle page</h1>
     </div>
   );
 }
