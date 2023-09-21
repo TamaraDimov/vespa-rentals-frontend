@@ -10,7 +10,6 @@ export default function Motorcycle() {
     dispatch(fetchMotorcycle());
   }, [dispatch]);
 
-  console.log(motorcycle);
 
   return (
     <div>
