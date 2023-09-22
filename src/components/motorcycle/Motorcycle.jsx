@@ -1,6 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
 import { fetchMotorcycle } from '../../redux/reducers/motorcycleSlice';
+import Item from './subcomponents/Item';
 
 export default function Motorcycle() {
   const dispatch = useDispatch();
@@ -11,13 +12,20 @@ export default function Motorcycle() {
   }, [dispatch]);
 
   const Succes = () => {
-    motorcycle.motorcycle.map((item) => <p key={item.id}>{item.name}</p>);
-
-    return (
-      <div>
-        <h1>Motorcycle page</h1>
-        {motorcycle.status ? <Succes /> : 'Loading...'}
-      </div>
-    );
+    motorcycle.motorcycle.map((item) => (
+      <Item
+        key={item.id}
+        name={item.name}
+        photo={item.photo}
+        description={item.description}
+      />
+    ));
   };
+
+  return (
+    <div>
+      <h1>LATEST MODELS</h1>
+      {motorcycle.status ? <Succes /> : 'Loading...'}
+    </div>
+  );
 }

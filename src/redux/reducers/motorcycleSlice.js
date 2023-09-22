@@ -1,26 +1,32 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
+import { getUserFromLocalStorage } from '../../helpers/LocalStorage';
 
-export const fetchMotorcycle = createAsyncThunk(
-  'get/ferchMortcycle',
-  async () => {
-    try {
-      const motorcycleData = await fetch(
-        'http://localhost:4000/api/v1/motorcycles',
-      );
-      const dataJson = motorcycleData.json();
-      return dataJson;
-    } catch (error) {
-      return error;
-    }
-  },
-);
+const data = getUserFromLocalStorage();
+
+export const fetchMotorcycle = createAsyncThunk('get/ferchMortcycle', async () => {
+  try {
+    const motorcycleData = await fetch('http://localhost:4000/api/v1/motorcycles', {
+      headers: {
+        Authorization: `Bearer ${data.user.token}`,
+      },
+    });
+    const dataJson = motorcycleData.json();
+    return dataJson;
+  } catch (error) {
+    return error;
+  }
+});
 
 export const fetchSpecificMotorcycle = createAsyncThunk(
   'get/fetchSpecificMotorcycle',
   async (id) => {
     try {
       const motorcycleData = await fetch(
-        `http://localhost:4000/api/v1/motorcycles/${id}`,
+        `http://localhost:4000/api/v1/motorcycles/${id}`, {
+          headers: {
+            Authorization: `Bearer ${data.user.token}`,
+          },
+        },
       );
       const dataJson = motorcycleData.json();
       return dataJson;
