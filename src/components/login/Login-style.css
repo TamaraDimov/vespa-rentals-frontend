@@ -38,7 +38,7 @@
   background-color: rgba(9, 0, 0, 0.75);
   background-blend-mode: multiply;
 
-  /* background-size: auto; */
+  background-size: cover;
   background-repeat: no-repeat;
   margin-bottom: 0;
   padding-bottom: 0;
