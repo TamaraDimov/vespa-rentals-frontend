@@ -1,14 +1,16 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import API_URL from '../app/API_URL';
+import { getUserFromLocalStorage } from '../helpers/LocalStorage';
+
+const userData = getUserFromLocalStorage();
 
 export const fetchReservations = createAsyncThunk(
   'reservations/fetchReservations',
   async () => {
     try {
-      const token = localStorage.getItem('token');
       const response = await fetch(`${API_URL}/reservations`, {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${userData.user.token}`,
         },
       });
       if (!response.ok) {
@@ -26,12 +28,11 @@ export const addReservation = createAsyncThunk(
   'reservations/addReservation',
   async (reservation) => {
     try {
-      const token = localStorage.getItem('token');
       const response = await fetch(`${API_URL}/reservations`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
+          Authorization: `Bearer ${userData.user.token}`,
         },
         body: JSON.stringify(reservation),
       });
