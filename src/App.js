@@ -1,6 +1,6 @@
-import './App.css';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import LoginPage from './components/login/Login-page';
 import store from './app/store';
 import Motorcycle from './components/motorcycle/Motorcycle';
 import Detail from './components/motorcycle/Detail';
@@ -14,11 +14,15 @@ const router = createBrowserRouter([
     element: <Layout />,
     children: [
       {
-        path: '/motorcycle',
+        path: '/',
+        element: <LoginPage />,
+      },
+      {
+        path: '/motorcycles',
         element: <Motorcycle />,
       },
       {
-        path: '/motorcycle/:id',
+        path: '/motorcycles/:id',
         element: <Detail />,
         loader: async ({ params }) => params,
       },

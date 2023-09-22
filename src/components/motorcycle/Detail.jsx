@@ -1,7 +1,7 @@
 import { useLoaderData } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchSpecificMotorcycle } from './motorcycleSlice';
+import { fetchSpecificMotorcycle } from '../../redux/reducers/motorcycleSlice';
 
 export default function Detail() {
   const motorcycleId = useLoaderData();
