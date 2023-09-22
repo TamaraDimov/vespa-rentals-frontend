@@ -1,15 +1,15 @@
-import React, { useState } from "react";
-import { useDispatch } from "react-redux";
-import { addReservation } from "../../redux/reservationActions";
+import React, { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addReservation } from '../../redux/reservationActions';
 
 function AddReservation() {
   const dispatch = useDispatch();
   const [reservation, setReservation] = useState({
-    start_date: "",
-    end_date: "",
-    city: "",
-    user_id: "",
-    motorcycle_id: "",
+    start_date: '',
+    end_date: '',
+    city: '',
+    user_id: '',
+    motorcycle_id: '',
   });
 
   const handleChange = (event) => {
@@ -24,11 +24,11 @@ function AddReservation() {
     event.preventDefault();
     dispatch(addReservation(reservation));
     setReservation({
-      start_date: "",
-      end_date: "",
-      city: "",
-      user_id: "",
-      motorcycle_id: "",
+      start_date: '',
+      end_date: '',
+      city: '',
+      user_id: '',
+      motorcycle_id: '',
     });
   };
 

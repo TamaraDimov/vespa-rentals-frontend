@@ -32,9 +32,11 @@ const registerUser = createAsyncThunk('user/registerUser', async ({ email, usern
 const loginUser = createAsyncThunk('user/loginUser', async ({ email, username, password }) => {
   try {
     const resp = await customFetch.post('http://localhost:4000/login', {
-      email,
-      username,
-      password,
+      user: {
+        email,
+        username,
+        password,
+      },
     });
     return resp.data;
   } catch (error) {

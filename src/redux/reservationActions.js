@@ -5,7 +5,12 @@ export const fetchReservations = createAsyncThunk(
   'reservations/fetchReservations',
   async () => {
     try {
-      const response = await fetch(`${API_URL}/reservations`);
+      const token = localStorage.getItem('token');
+      const response = await fetch(`${API_URL}/reservations`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      });
       if (!response.ok) {
         throw new Error('Failed to fetch reservations');
       }
@@ -21,10 +26,12 @@ export const addReservation = createAsyncThunk(
   'reservations/addReservation',
   async (reservation) => {
     try {
+      const token = localStorage.getItem('token');
       const response = await fetch(`${API_URL}/reservations`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          Authorization: `Bearer ${token}`,
         },
         body: JSON.stringify(reservation),
       });
