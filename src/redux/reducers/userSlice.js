@@ -12,6 +12,7 @@ import 'react-toastify/dist/ReactToastify.css';
 const initialState = {
   isLoading: false,
   user: getUserFromLocalStorage(),
+  token: '',
 };
 
 const registerUser = createAsyncThunk('user/registerUser', async ({ email, username, password }) => {
