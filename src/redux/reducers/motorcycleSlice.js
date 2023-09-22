@@ -5,7 +5,7 @@ export const fetchMotorcycle = createAsyncThunk(
   async () => {
     try {
       const motorcycleData = await fetch(
-        'http://localhost:3000/api/v1/motorcycles',
+        'http://localhost:4000/api/v1/motorcycles',
       );
       const dataJson = motorcycleData.json();
       return dataJson;
@@ -20,7 +20,7 @@ export const fetchSpecificMotorcycle = createAsyncThunk(
   async (id) => {
     try {
       const motorcycleData = await fetch(
-        `http://localhost:3000/api/v1/motorcycles${id}`,
+        `http://localhost:4000/api/v1/motorcycles/${id}`,
       );
       const dataJson = motorcycleData.json();
       return dataJson;

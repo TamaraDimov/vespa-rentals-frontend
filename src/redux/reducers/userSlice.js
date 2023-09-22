@@ -14,24 +14,25 @@ const initialState = {
   user: getUserFromLocalStorage(),
 };
 
-const registerUser = createAsyncThunk('user/registerUser', async ({ username, password }) => {
+const registerUser = createAsyncThunk('user/registerUser', async ({ email, username, password }) => {
   try {
-    const resp = await customFetch.post('/api/v1/register', {
+    const resp = await customFetch.post('http://localhost:4000/signup', {
       user: {
+        email,
         username,
         password,
       },
     });
-
     return resp.data;
   } catch (error) {
     throw new Error(error.response.data);
   }
 });
 
-const loginUser = createAsyncThunk('user/loginUser', async ({ username, password }) => {
+const loginUser = createAsyncThunk('user/loginUser', async ({ email, username, password }) => {
   try {
-    const resp = await customFetch.post('/api/v1/login', {
+    const resp = await customFetch.post('http://localhost:4000/login', {
+      email,
       username,
       password,
     });

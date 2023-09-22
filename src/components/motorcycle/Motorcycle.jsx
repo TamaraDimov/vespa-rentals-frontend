@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchMotorcycle } from './motorcycleSlice';
+import { fetchMotorcycle } from '../../redux/reducers/motorcycleSlice';
 
 export default function Motorcycle() {
   const dispatch = useDispatch();

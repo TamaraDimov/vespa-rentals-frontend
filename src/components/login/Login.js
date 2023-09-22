@@ -10,6 +10,7 @@ import logo1 from '../../assets/vespa.png';
 import './Login-style.css';
 
 const Login = () => {
+  const [email, setEmail] = useState('');
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [isMember, setIsMember] = useState(true);
@@ -20,6 +21,9 @@ const Login = () => {
 
   const handleChange = (e) => {
     const { name, value } = e.target;
+    if (name === 'email') {
+      setEmail(value);
+    }
     if (name === 'username') {
       setUsername(value);
     } else if (name === 'password') {
@@ -29,15 +33,15 @@ const Login = () => {
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (!username || !password) {
+    if (!email || !password || !username) {
       alert.error('Please fill out all fields');
       return;
     }
 
     if (isMember) {
-      dispatch(loginUser({ username, password }));
+      dispatch(loginUser({ username, email, password }));
     } else {
-      dispatch(registerUser({ username, password }));
+      dispatch(registerUser({ username, email, password }));
     }
   };
 
@@ -48,7 +52,7 @@ const Login = () => {
   useEffect(() => {
     if (user) {
       setTimeout(() => {
-        navigate('/homepage');
+        navigate('/motorcycles');
       }, 500);
     }
   }, [user, navigate]);
@@ -64,9 +68,23 @@ const Login = () => {
             data-validate="Enter username"
           >
             <input
-              type="text"
+              type="name"
               value={username}
               name="username"
+              onChange={handleChange}
+              className="form-input"
+            />
+            <BiSolidUser className="focus-input100" />
+          </div>
+
+          <div
+            className="wrap-input100 validate-input"
+            data-validate="Enter email"
+          >
+            <input
+              type="email"
+              value={email}
+              name="email"
               onChange={handleChange}
               className="form-input"
             />
