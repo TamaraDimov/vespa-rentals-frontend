@@ -15,11 +15,7 @@ function AddReservation() {
     user_id: data.user.data.id,
     motorcycle_id: '',
   });
-  useSelector((state) => state.motorcycle);
-
-  useEffect(() => {
-    dispatch(fetchMotorcycle());
-  }, [dispatch]);
+  const motorcycle = useSelector((state) => state.motorcycle);
 
   useEffect(() => {
     dispatch(fetchMotorcycle());
@@ -86,19 +82,20 @@ function AddReservation() {
         </select>
       </label>
       <label htmlFor="motorcycle_id">
-        Motorcycle ID:
+        Motorcycle:
         <select
-          name="Motorcycle"
+          name="motorcycle_id"
           id="motorcycle_id"
           value={reservation.motorcycle_id}
           onChange={handleChange}
         >
-          {/* <option value="">Select a motorcycle</option>
-          {motorcycle.motorcycle.map((motor) => (
-            <option key={motor.id} value={motor.id}>
-              {motor.name}
-            </option>
-          ))} */}
+          <option value="">Select a motorcycle</option>
+          {Array.isArray(motorcycle.motorcycle)
+            && motorcycle.motorcycle.map((motor) => (
+              <option key={motor.id} value={motor.id}>
+                {motor.name}
+              </option>
+            ))}
         </select>
       </label>
       <button type="submit">Add Reservation</button>
