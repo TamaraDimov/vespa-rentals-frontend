@@ -37,7 +37,7 @@ const Reservations = () => {
                   <td>{reservation.start_date}</td>
                   <td>{reservation.end_date}</td>
                   <td>{reservation.city}</td>
-                  <td>{reservation.motorcycle_id}</td>
+                  <td>{reservation.motorcycle.name}</td>
                 </tr>
               ))}
           </tbody>
