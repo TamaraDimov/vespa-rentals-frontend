@@ -24,10 +24,10 @@ const DeleteMotorcycle = () => {
     available !== 1 ? 's' : ''
   } available.
   ${
-    available
-      ? 'Select a motorcycle down below to delete!'
-      : 'No motorcycles are available!'
-  }`;
+  available
+    ? 'Select a motorcycle down below to delete!'
+    : 'No motorcycles are available!'
+}`;
 
   return (
     <section>
@@ -35,8 +35,8 @@ const DeleteMotorcycle = () => {
         <h1>Available motorcycles</h1>
         <p>{message}</p>
         <div>
-          {Array.isArray(motorcycles.motorcycle) &&
-            motorcycles.motorcycle.map((motorcycle) => (
+          {Array.isArray(motorcycles.motorcycle)
+            && motorcycles.motorcycle.map((motorcycle) => (
               <li key={motorcycle.id}>
                 <img src={motorcycle.photo} alt={motorcycle.model} />
                 <div>

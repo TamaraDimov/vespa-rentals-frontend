@@ -90,8 +90,8 @@ function AddReservation() {
           onChange={handleChange}
         >
           <option value="">Select a motorcycle</option>
-          {Array.isArray(motorcycle.motorcycle) &&
-            motorcycle.motorcycle.map((motor) => (
+          {Array.isArray(motorcycle.motorcycle)
+            && motorcycle.motorcycle.map((motor) => (
               <option key={motor.id} value={motor.id}>
                 {motor.name}
               </option>
