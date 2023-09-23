@@ -8,7 +8,6 @@ import DeleteMotorcycle from './components/motorcycle/DeleteMotorcycle';
 import Layout from './layout/Layout';
 import AddReservation from './components/AddReservation/AddReservation';
 import Reservation from './components/Reservation/Reservation';
-import Sidebar from './components/Sidebar/Sidebar';
 
 const router = createBrowserRouter([
   {
@@ -21,7 +20,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/motorcycles',
-        element: ((<Motorcycle />), (<Sidebar />)),
+        element: <Motorcycle />,
       },
       {
         path: '/motorcycles/:id',
