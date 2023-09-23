@@ -24,10 +24,10 @@ export const fetchSpecificMotorcycle = createAsyncThunk(
     try {
       const motorcycleData = await fetch(
         `http://localhost:4000/api/v1/motorcycles/${id}`, {
-          headers: {
-            Authorization: `Bearer ${data.user.token}`,
-          },
+        headers: {
+          Authorization: `Bearer ${data.user.token}`,
         },
+      },
       );
       const dataJson = motorcycleData.json();
       return dataJson;
@@ -81,6 +81,17 @@ const motorcycleSlice = createSlice({
       .addCase(fetchSpecificMotorcycle.fulfilled, (state, action) => {
         state.specificMotorcycle.status = true;
         state.specificMotorcycle.motorcycle = action.payload;
+      })
+      .addCase(deleteMotorcycle.pending, (state) => {
+        state.status = 'deleting';
+      })
+      .addCase(deleteMotorcycle.fulfilled, (state, action) => {
+        state.status = 'success';
+        state.reservations.push(action.payload);
+      })
+      .addCase(deleteMotorcycle.rejected, (state, action) => {
+        state.status = 'failure';
+        state.error = action.error.message;
       });
   },
 });
