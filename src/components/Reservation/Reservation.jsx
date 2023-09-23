@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { fetchReservations } from '../../redux/reservationActions';
 
 const Reservations = () => {
-  const reservations = useSelector((state) => state.reservations);
+  const reservations = useSelector((state) => state.reservation);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -24,25 +24,22 @@ const Reservations = () => {
         <table>
           <thead>
             <tr>
-              <th>Reservation ID</th>
               <th>Start Date</th>
               <th>End Date</th>
               <th>City</th>
-              <th>User ID</th>
-              <th>Motorcycle ID</th>
+              <th>Motorcycle</th>
             </tr>
           </thead>
           <tbody>
-            {reservations.data.map((reservation) => (
-              <tr key={reservation.id}>
-                <td>{reservation.id}</td>
-                <td>{reservation.start_date}</td>
-                <td>{reservation.end_date}</td>
-                <td>{reservation.city}</td>
-                <td>{reservation.user_id}</td>
-                <td>{reservation.motorcycle_id}</td>
-              </tr>
-            ))}
+            {reservations.reservations
+              && reservations.reservations.map((reservation) => (
+                <tr key={reservation.id}>
+                  <td>{reservation.start_date}</td>
+                  <td>{reservation.end_date}</td>
+                  <td>{reservation.city}</td>
+                  <td>{reservation.motorcycle_id}</td>
+                </tr>
+              ))}
           </tbody>
         </table>
       )}
