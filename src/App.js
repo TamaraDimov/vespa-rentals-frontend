@@ -5,6 +5,7 @@ import store from './app/store';
 import Motorcycle from './components/motorcycle/Motorcycle';
 import Detail from './components/motorcycle/Detail';
 import Layout from './layout/Layout';
+import AddMotorcycle from './components/motorcycle/AddMototorcycle';
 
 const router = createBrowserRouter([
   {
@@ -23,6 +24,10 @@ const router = createBrowserRouter([
         path: '/motorcycles/:id',
         element: <Detail />,
         loader: async ({ params }) => params,
+      },
+      {
+        path: '/motorcycles/new',
+        element: <AddMotorcycle />,
       },
     ],
   },

@@ -1,10 +1,17 @@
 import PropTypes from 'prop-types';
 
-export default function Item({ name, description, photo }) {
+export default function Item({
+  name, description, photo, model,
+}) {
   return (
     <div>
       <img alt={name} src={photo} />
-      <p>{name}</p>
+      <p>
+        {name}
+      </p>
+      <p>
+        {model}
+      </p>
       <p>{description}</p>
       <div>
         <img alt="facebook" />
@@ -18,5 +25,6 @@ export default function Item({ name, description, photo }) {
 Item.propTypes = {
   name: PropTypes.string.isRequired,
   photo: PropTypes.string.isRequired,
+  model: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };
