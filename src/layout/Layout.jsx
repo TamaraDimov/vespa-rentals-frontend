@@ -1,18 +1,14 @@
-import { Outlet, Link } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import Sidebar from '../components/Sidebar/Sidebar';
 
 export default function Layout() {
   return (
     <>
       <div>
         <div className="side-bar">
-          {/* This is the side bar */}
-          <Link to="/motorcycles">Motorcycles</Link>
-          {' '}
-          <br />
-          <Link to="/motorcycles/new">New motorcycles</Link>
+          <Sidebar />
         </div>
         <div className="main-page">
-          {/* This is the main page , all pages should go here */}
           <Outlet />
         </div>
       </div>

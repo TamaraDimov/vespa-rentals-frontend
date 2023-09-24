@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getUserFromLocalStorage } from '../../helpers/LocalStorage';
+import API_URL from '../../app/API_URL';
 
 const data = getUserFromLocalStorage();
 
@@ -48,6 +49,25 @@ export const fetchSpecificMotorcycle = createAsyncThunk(
         },
       );
       const dataJson = motorcycleData.json();
+      return dataJson;
+    } catch (error) {
+      return error;
+    }
+  },
+);
+
+export const deleteMotorcycle = createAsyncThunk(
+  'motorcycle/deleteMotorcycle',
+  async (id) => {
+    try {
+      const response = await fetch(`${API_URL}/motorcycles/${id}`, {
+        method: 'DELETE',
+        headers: {
+          'Content-Type': 'application/json',
+          Authorization: `Bearer ${data.user.token}`,
+        },
+      });
+      const dataJson = await response.json();
       return dataJson;
     } catch (error) {
       return error;
@@ -138,6 +158,20 @@ const motorcycleSlice = createSlice({
 
       .addCase(fetchUser.fulfilled, (state, action) => {
         state.status = action.payload;
+      })
+
+      .addCase(deleteMotorcycle.pending, (state) => {
+        state.status = 'deleting';
+      })
+
+      .addCase(deleteMotorcycle.fulfilled, (state, action) => {
+        state.status = 'success';
+        state.motorcycle.push(action.payload);
+      })
+
+      .addCase(deleteMotorcycle.rejected, (state, action) => {
+        state.status = 'failure';
+        state.error = action.error.message;
       });
   },
 });
