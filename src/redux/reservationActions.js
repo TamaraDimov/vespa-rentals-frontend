@@ -1,6 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import API_URL from '../app/API_URL';
 import { getUserFromLocalStorage } from '../helpers/LocalStorage';
+import { toast } from 'react-toastify';
 
 const userData = getUserFromLocalStorage();
 
@@ -21,7 +22,7 @@ export const fetchReservations = createAsyncThunk(
     } catch (error) {
       throw new Error(error.message);
     }
-  },
+  }
 );
 
 export const addReservation = createAsyncThunk(
@@ -40,11 +41,12 @@ export const addReservation = createAsyncThunk(
         throw new Error('Failed to add reservation');
       }
       const data = await response.json();
+      toast.success('Successfully made reservation');
       return data;
     } catch (error) {
       throw new Error(error.message);
     }
-  },
+  }
 );
 
 export default { fetchReservations, addReservation };
