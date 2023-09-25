@@ -10,6 +10,7 @@ const DeleteMotorcycle = () => {
   const motorcycles = useSelector((state) => state.motorcycle);
   const { user } = useSelector((state) => state.user);
   const [confirm, setConfirm] = useState(false);
+  const [id, setId] = useState('');
   const { token } = user.user;
 
   const dispatch = useDispatch();
@@ -42,8 +43,8 @@ const DeleteMotorcycle = () => {
       <div>
         <h1>Available motorcycles</h1>
         <p>{message}</p>
+        {confirm && <PopDelete id={id} /> }
         <div>
-          {confirm && <PopDelete /> }
           {Array.isArray(motorcycles.motorcycle)
             && motorcycles.motorcycle.map((motorcycle) => (
               <li key={motorcycle.id}>
@@ -54,7 +55,7 @@ const DeleteMotorcycle = () => {
                   <button
                     type="button"
                     onClick={() => {
-                      handleDelete(motorcycle.id);
+                      setId(motorcycle.id);
                       handleConfirmation();
                     }}
                   >
