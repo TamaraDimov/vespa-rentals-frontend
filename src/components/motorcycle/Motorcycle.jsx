@@ -30,6 +30,7 @@ export default function Motorcycle() {
         <h1>LATEST MODELS</h1>
         <div>
           {motorcycle.isLoading ? <Succes /> : 'Loading...'}
+
         </div>
       </div>
     );
