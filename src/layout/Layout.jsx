@@ -5,9 +5,6 @@ export default function Layout() {
   return (
     <>
       <div>
-        <div className="side-bar">
-          <Sidebar />
-        </div>
         <div className="main-page">
           <Outlet />
         </div>

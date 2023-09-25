@@ -21,7 +21,7 @@ const router = createBrowserRouter([
       },
       {
         path: '/motorcycles',
-        element: <Motorcycle />,
+        element: ((<Motorcycle />), (<Sidebar />)),
       },
       {
         path: '/motorcycles/:id',
