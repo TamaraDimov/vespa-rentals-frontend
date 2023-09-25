@@ -7,12 +7,14 @@ import {
 
 const DeleteMotorcycle = () => {
   const motorcycles = useSelector((state) => state.motorcycle);
+  const { user } = useSelector((state) => state.user);
+  const { token } = user.user;
 
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(fetchMotorcycle());
-  }, [dispatch]);
+    dispatch(fetchMotorcycle(token));
+  }, [dispatch, token]);
 
   const handleDelete = (id) => {
     dispatch(deleteMotorcycle(id));

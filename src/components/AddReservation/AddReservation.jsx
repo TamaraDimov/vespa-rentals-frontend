@@ -16,10 +16,12 @@ function AddReservation() {
     motorcycle_id: '',
   });
   const motorcycle = useSelector((state) => state.motorcycle);
+  const { user } = useSelector((state) => state.user);
+  const { token } = user.user;
 
   useEffect(() => {
-    dispatch(fetchMotorcycle());
-  }, [dispatch]);
+    dispatch(fetchMotorcycle(token));
+  }, [dispatch, token]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
