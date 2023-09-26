@@ -14,6 +14,15 @@ const Reservations = () => {
     dispatch(fetchReservations());
   }, [dispatch]);
 
+  const handleDeleteReservation = async (reservationId) => {
+    try {
+      await dispatch(deleteReservation(reservationId));
+      toast.success('Reservation deleted successfully');
+    } catch (error) {
+      toast.error('Failed to delete reservation');
+    }
+  };
+
   return (
     <div>
       <h1>Reservations</h1>
@@ -35,8 +44,8 @@ const Reservations = () => {
             </tr>
           </thead>
           <tbody>
-            {reservations.reservations &&
-              reservations.reservations.map((reservation) => (
+            {reservations.reservations
+              && reservations.reservations.map((reservation) => (
                 <tr key={reservation.id}>
                   <td>{reservation.start_date}</td>
                   <td>{reservation.end_date}</td>
@@ -45,7 +54,7 @@ const Reservations = () => {
                   <td>
                     <button
                       type="button"
-                      onClick={() => deleteReservation(reservation.id)}
+                      onClick={() => handleDeleteReservation(reservation.id)}
                     >
                       Delete
                     </button>
@@ -60,3 +69,5 @@ const Reservations = () => {
 };
 
 export default Reservations;
+
+JSX;
