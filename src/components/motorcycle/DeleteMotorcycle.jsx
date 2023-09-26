@@ -36,9 +36,9 @@ const DeleteMotorcycle = () => {
   return (
     <section>
       <div>
+        {confirm && <PopDelete id={id} confirm={confirm} setConfirm={setConfirm} /> }
         <h1>Available motorcycles</h1>
         <p>{message}</p>
-        {confirm && <PopDelete id={id} confirm={confirm} setConfirm={setConfirm} /> }
         <div>
           {Array.isArray(motorcycles.motorcycle)
             && motorcycles.motorcycle.map((motorcycle) => (
@@ -52,6 +52,7 @@ const DeleteMotorcycle = () => {
                     onClick={() => {
                       setId(motorcycle.id);
                       handleConfirmation();
+                      window.scrollTo(0, 0);
                     }}
                   >
                     Delete
