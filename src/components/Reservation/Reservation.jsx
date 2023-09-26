@@ -44,8 +44,8 @@ const Reservations = () => {
             </tr>
           </thead>
           <tbody>
-            {reservations.reservations
-              && reservations.reservations.map((reservation) => (
+            {reservations.reservations &&
+              reservations.reservations.map((reservation) => (
                 <tr key={reservation.id}>
                   <td>{reservation.start_date}</td>
                   <td>{reservation.end_date}</td>
@@ -69,5 +69,3 @@ const Reservations = () => {
 };
 
 export default Reservations;
-
-JSX;
