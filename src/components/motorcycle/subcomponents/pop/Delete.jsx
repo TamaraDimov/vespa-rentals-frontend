@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteMotorcycle } from '../../../../redux/reducers/motorcycleSlice';
 
-export default function PopDelete({ id }) {
+export default function PopDelete({ id, confirm , setConfirm }) {
   const dispatch = useDispatch();
 
   return (
