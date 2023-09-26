@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchReservations } from '../../redux/reservationActions';
+import { toast } from 'react-toastify';
+import {
+  fetchReservations,
+  deleteReservation,
+} from '../../redux/reservationActions';
 
 const Reservations = () => {
   const reservations = useSelector((state) => state.reservation);
@@ -31,13 +35,21 @@ const Reservations = () => {
             </tr>
           </thead>
           <tbody>
-            {reservations.reservations
-              && reservations.reservations.map((reservation) => (
+            {reservations.reservations &&
+              reservations.reservations.map((reservation) => (
                 <tr key={reservation.id}>
                   <td>{reservation.start_date}</td>
                   <td>{reservation.end_date}</td>
                   <td>{reservation.city}</td>
                   <td>{reservation.motorcycle.name}</td>
+                  <td>
+                    <button
+                      type="button"
+                      onClick={() => deleteReservation(reservation.id)}
+                    >
+                      Delete
+                    </button>
+                  </td>
                 </tr>
               ))}
           </tbody>

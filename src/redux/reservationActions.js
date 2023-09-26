@@ -22,7 +22,7 @@ export const fetchReservations = createAsyncThunk(
     } catch (error) {
       throw new Error(error.message);
     }
-  },
+  }
 );
 
 export const addReservation = createAsyncThunk(
@@ -46,7 +46,7 @@ export const addReservation = createAsyncThunk(
     } catch (error) {
       throw new Error(error.message);
     }
-  },
+  }
 );
 
 export const deleteReservation = createAsyncThunk(
@@ -67,7 +67,7 @@ export const deleteReservation = createAsyncThunk(
     } catch (error) {
       throw new Error(error.message);
     }
-  },
+  }
 );
 
 export default { fetchReservations, addReservation, deleteReservation };
