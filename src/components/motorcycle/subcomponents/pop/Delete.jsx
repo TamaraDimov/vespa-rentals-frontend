@@ -15,19 +15,19 @@ export default function PopDelete({ id, confirm, setConfirm }) {
     >
       <Modal.Dialog>
         <Modal.Body>
-          <p>Modal body text goes here.</p>
+          <p>Please click DELETE to confirm that you want to delete this item.</p>
         </Modal.Body>
 
         <Modal.Footer>
           <Button variant="secondary" onClick={() => setConfirm(!confirm)}>Close</Button>
           <Button
-            variant="primary"
+            variant="btn btn-danger"
             onClick={() => {
               dispatch(deleteMotorcycle(id));
               window.location.reload();
             }}
           >
-            Save changes
+            Delete
           </Button>
         </Modal.Footer>
       </Modal.Dialog>

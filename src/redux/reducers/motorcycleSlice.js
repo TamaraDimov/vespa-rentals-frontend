@@ -59,7 +59,6 @@ export const fetchSpecificMotorcycle = createAsyncThunk(
 export const deleteMotorcycle = createAsyncThunk(
   'motorcycle/deleteMotorcycle',
   async (id) => {
-    console.log(`==========${id}`);
     try {
       const response = await fetch(`${API_URL}/motorcycles/${id}`, {
         method: 'DELETE',
