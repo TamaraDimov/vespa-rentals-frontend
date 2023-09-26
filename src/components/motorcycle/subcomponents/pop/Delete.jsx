@@ -2,13 +2,13 @@ import PropTypes from 'prop-types';
 import { useDispatch } from 'react-redux';
 import { deleteMotorcycle } from '../../../../redux/reducers/motorcycleSlice';
 
-export default function PopDelete({ id, confirm , setConfirm }) {
+export default function PopDelete({ id, confirm, setConfirm }) {
   const dispatch = useDispatch();
 
   return (
     <div>
       <h1>Do you want to delete ?</h1>
-      <button type="button">
+      <button type="button" onClick={() => setConfirm(!confirm)}>
         Cancel
       </button>
       <button
@@ -26,4 +26,6 @@ export default function PopDelete({ id, confirm , setConfirm }) {
 
 PopDelete.propTypes = {
   id: PropTypes.number.isRequired,
+  confirm: PropTypes.bool.isRequired,
+  setConfirm: PropTypes.func.isRequired,
 };

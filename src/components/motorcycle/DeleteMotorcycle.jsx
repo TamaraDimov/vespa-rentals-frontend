@@ -38,7 +38,7 @@ const DeleteMotorcycle = () => {
       <div>
         <h1>Available motorcycles</h1>
         <p>{message}</p>
-        {confirm && <PopDelete id={id} /> }
+        {confirm && <PopDelete id={id} confirm={confirm} setConfirm={setConfirm} /> }
         <div>
           {Array.isArray(motorcycles.motorcycle)
             && motorcycles.motorcycle.map((motorcycle) => (
