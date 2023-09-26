@@ -1,7 +1,7 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
+import { toast } from 'react-toastify';
 import API_URL from '../app/API_URL';
 import { getUserFromLocalStorage } from '../helpers/LocalStorage';
-import { toast } from 'react-toastify';
 
 const userData = getUserFromLocalStorage();
 
@@ -22,7 +22,7 @@ export const fetchReservations = createAsyncThunk(
     } catch (error) {
       throw new Error(error.message);
     }
-  }
+  },
 );
 
 export const addReservation = createAsyncThunk(
@@ -46,7 +46,28 @@ export const addReservation = createAsyncThunk(
     } catch (error) {
       throw new Error(error.message);
     }
-  }
+  },
 );
 
-export default { fetchReservations, addReservation };
+export const deleteReservation = createAsyncThunk(
+  'reservations/deleteReservation',
+  async (reservationId) => {
+    try {
+      const response = await fetch(`${API_URL}/reservations/${reservationId}`, {
+        method: 'DELETE',
+        headers: {
+          Authorization: `Bearer ${userData.user.token}`,
+        },
+      });
+      if (!response.ok) {
+        throw new Error('Failed to delete reservation');
+      }
+
+      toast.success('Successfully deleted reservation');
+    } catch (error) {
+      throw new Error(error.message);
+    }
+  },
+);
+
+export default { fetchReservations, addReservation, deleteReservation };

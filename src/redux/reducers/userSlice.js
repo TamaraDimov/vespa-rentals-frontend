@@ -29,7 +29,7 @@ const registerUser = createAsyncThunk(
     } catch (error) {
       throw new Error(error.response.data);
     }
-  }
+  },
 );
 
 const loginUser = createAsyncThunk(
@@ -47,7 +47,7 @@ const loginUser = createAsyncThunk(
     } catch (error) {
       throw new Error(error.response.data);
     }
-  }
+  },
 );
 
 const userSlice = createSlice({
@@ -69,7 +69,7 @@ const userSlice = createSlice({
         state.isLoading = false;
         state.user = payload;
         addUserToLocalStorage(payload);
-        toast.success(`Hello 👋 `);
+        toast.success('Hello 👋 ');
       })
       .addCase(registerUser.rejected, (state, { error }) => {
         state.isLoading = false;
@@ -82,7 +82,7 @@ const userSlice = createSlice({
         state.isLoading = false;
         state.user = payload;
         addUserToLocalStorage(payload);
-        toast.success(`Welcome Back 😀 `);
+        toast.success('Welcome Back 😀 ');
       })
       .addCase(loginUser.rejected, (state, { error }) => {
         state.isLoading = false;
