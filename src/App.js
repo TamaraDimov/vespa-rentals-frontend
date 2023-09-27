@@ -27,25 +27,25 @@ const router = createBrowserRouter([
       },
       {
         path: '/motorcycles/:id',
-        element: <Detail />,
+        element: ((<Detail />), (<Sidebar />)),
         loader: async ({ params }) => params,
       },
       {
         path: '/motorcycles/new',
-        element: <AddMotorcycle />,
+        element: ((<AddMotorcycle />), (<Sidebar />)),
       },
       {
         path: '/motorcycles/delete-motorcycles',
-        element: <DeleteMotorcycle />,
+        element: ((<DeleteMotorcycle />), (<Sidebar />)),
         loader: async ({ params }) => params,
       },
       {
         path: '/AddReservation',
-        element: <AddReservation />,
+        element: ((<AddReservation />), (<Sidebar />)),
       },
       {
         path: '/Reservation',
-        element: <Reservation />,
+        element: ((<Reservation />), (<Sidebar />)),
       },
     ],
   },

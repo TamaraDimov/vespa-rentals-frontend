@@ -1,0 +1,96 @@
+:root {
+  --main-color: #d84800;
+  --body-font: 'Poppins-Regular';
+}
+
+.show-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 280px;
+  height: 100vh;
+  background-color: #fff;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.show-sidebar header {
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000000a6;
+}
+
+.show-sidebar img {
+  max-width: 100%;
+  height: auto;
+}
+
+.show-sidebar .nav-links {
+  padding: 20px 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+.show-sidebar .nav-links a {
+  display: block;
+  padding: 10px 10px 10px 20px;
+  color: #000;
+  text-decoration: none;
+}
+
+.show-sidebar .nav-links a:hover {
+  background-color: #f3590065;
+}
+
+.show-sidebar .nav-links a.active {
+  background-color: #f3700c;
+  color: #000;
+}
+
+.show-sidebar button {
+  display: flex;
+  justify-content: center;
+  margin: 0 auto;
+  width: 80%;
+  padding: 10px 20px;
+  background-color: #000000;
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.show-sidebar .footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #050000;
+}
+
+.show-sidebar .social_links {
+  text-align: center;
+  width: 70%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.4rem;
+  color: rgb(255, 255, 255);
+}
+
+.show-sidebar .social_links a {
+  font-size: 24px;
+  color: #000;
+  margin: 0 10px;
+}
+
+.show-sidebar .social_links {
+  transition: color 0.3s ease-in-out;
+}
+
+.show-sidebar .social_links :nth-child(1):hover {
+  color: #ff6200; /* Replace #ff0000 with your desired hover color */
+}
