@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { BiSolidUser } from 'react-icons/bi';
+import { MdEmail } from 'react-icons/md';
 import { RiLockPasswordFill } from 'react-icons/ri';
 import { toast } from 'react-toastify';
 import { loginUser, registerUser } from '../../redux/reducers/userSlice';
@@ -72,9 +73,12 @@ const Login = () => {
               value={username}
               name="username"
               onChange={handleChange}
-              className="form-input"
+              className="input100"
+              placeholder="Username"
             />
-            <BiSolidUser className="focus-input100" />
+            <span className="focus-input100" data-placeholder="&#xf207;">
+              <BiSolidUser className="input-icon" />
+            </span>
           </div>
 
           <div
@@ -86,9 +90,12 @@ const Login = () => {
               value={email}
               name="email"
               onChange={handleChange}
-              className="form-input"
+              className="input100"
+              placeholder="Email"
             />
-            <BiSolidUser className="focus-input100" />
+            <span className="focus-input100" data-placeholder="&#xf207;">
+              <MdEmail className="input-icon" />
+            </span>
           </div>
           <div
             className="wrap-input100 validate-input"
@@ -99,9 +106,12 @@ const Login = () => {
               value={password}
               name="password"
               onChange={handleChange}
-              className="form-input"
+              className="input100"
+              placeholder="Enter password"
             />
-            <RiLockPasswordFill className="focus-input100" />
+            <span className="focus-input100" data-placeholder="&#xf207;">
+              <RiLockPasswordFill className="input-icon" />
+            </span>
           </div>
         </div>
         <button
