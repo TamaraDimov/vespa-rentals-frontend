@@ -113,14 +113,18 @@ const Login = () => {
         </button>
       </form>
       <section className="member">
-        <img src={logo1} className="logo1" alt="logo1" />
-        <p className="member-text">
-          {isMember ? 'Not a member yet?' : 'Already a member?'}
-          <br />
-          <button type="button" onClick={toggleMember} className="member-btn">
-            {isMember ? 'Register' : 'Login'}
-          </button>
-        </p>
+        <div className="motor-logo">
+          <img src={logo1} className="logo1" alt="logo1" />
+        </div>
+        <div className="register-button">
+          <p className="member-text">
+            {isMember ? 'Not a member yet?' : 'Already a member?'}
+            <br />
+            <button type="button" onClick={toggleMember} className="member-btn">
+              {isMember ? 'Register' : 'Login'}
+            </button>
+          </p>
+        </div>
       </section>
     </div>
   );
