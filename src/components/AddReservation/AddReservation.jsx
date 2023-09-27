@@ -74,7 +74,12 @@ function AddReservation() {
       </label>
       <label htmlFor="city">
         City:
-        <select name="city" value={reservation.city} onChange={handleChange}>
+        <select
+          name="city"
+          id="city"
+          value={reservation.city}
+          onChange={handleChange}
+        >
           <option value="">Select a city</option>
           {cities.map((city) => (
             <option key={city} value={city}>

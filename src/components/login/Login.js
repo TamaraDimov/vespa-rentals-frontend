@@ -3,7 +3,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { BiSolidUser } from 'react-icons/bi';
 import { RiLockPasswordFill } from 'react-icons/ri';
-// import { toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import { loginUser, registerUser } from '../../redux/reducers/userSlice';
 import logo from '../../assets/logo.png';
 import logo1 from '../../assets/vespa.png';
@@ -34,7 +34,7 @@ const Login = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (!email || !password || !username) {
-      alert.error('Please fill out all fields');
+      toast.error('Please fill out all fields');
       return;
     }
 

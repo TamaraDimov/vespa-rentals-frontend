@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import customFetch from '../../helpers/axios';
 import {
   addUserToLocalStorage,
@@ -7,43 +8,47 @@ import {
   removeUserFromLocalStorage,
 } from '../../helpers/LocalStorage';
 
-import 'react-toastify/dist/ReactToastify.css';
-
 const initialState = {
   isLoading: false,
   user: getUserFromLocalStorage(),
   token: '',
 };
 
-const registerUser = createAsyncThunk('user/registerUser', async ({ email, username, password }) => {
-  try {
-    const resp = await customFetch.post('http://localhost:4000/signup', {
-      user: {
-        email,
-        username,
-        password,
-      },
-    });
-    return resp.data;
-  } catch (error) {
-    throw new Error(error.response.data);
-  }
-});
+const registerUser = createAsyncThunk(
+  'user/registerUser',
+  async ({ email, username, password }) => {
+    try {
+      const resp = await customFetch.post('http://localhost:4000/signup', {
+        user: {
+          email,
+          username,
+          password,
+        },
+      });
+      return resp.data;
+    } catch (error) {
+      throw new Error(error.response.data);
+    }
+  },
+);
 
-const loginUser = createAsyncThunk('user/loginUser', async ({ email, username, password }) => {
-  try {
-    const resp = await customFetch.post('http://localhost:4000/login', {
-      user: {
-        email,
-        username,
-        password,
-      },
-    });
-    return resp.data;
-  } catch (error) {
-    throw new Error(error.response.data);
-  }
-});
+const loginUser = createAsyncThunk(
+  'user/loginUser',
+  async ({ email, username, password }) => {
+    try {
+      const resp = await customFetch.post('http://localhost:4000/login', {
+        user: {
+          email,
+          username,
+          password,
+        },
+      });
+      return resp.data;
+    } catch (error) {
+      throw new Error(error.response.data);
+    }
+  },
+);
 
 const userSlice = createSlice({
   name: 'user',
@@ -64,7 +69,7 @@ const userSlice = createSlice({
         state.isLoading = false;
         state.user = payload;
         addUserToLocalStorage(payload);
-        toast.success(`Hello 👋 ${payload.username}`);
+        toast.success('Hello 👋 ');
       })
       .addCase(registerUser.rejected, (state, { error }) => {
         state.isLoading = false;
@@ -77,7 +82,7 @@ const userSlice = createSlice({
         state.isLoading = false;
         state.user = payload;
         addUserToLocalStorage(payload);
-        toast.success(`Welcome Back 😀 ${payload.username}`);
+        toast.success('Welcome Back 😀 ');
       })
       .addCase(loginUser.rejected, (state, { error }) => {
         state.isLoading = false;
