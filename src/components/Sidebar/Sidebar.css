@@ -26,6 +26,12 @@
   height: auto;
 }
 
+.show-sidebar .social_links a {
+  font-size: 24px;
+  color: #000;
+  margin: 0 10px;
+}
+
 .show-sidebar .nav-links {
   padding: 20px 0;
   font-size: 1.5rem;
@@ -54,7 +60,7 @@
   margin: 0 auto;
   width: 80%;
   padding: 10px 20px;
-  background-color: #000000;
+  background-color: #000;
   color: #fff;
   text-decoration: none;
   font-size: 16px;
@@ -79,15 +85,6 @@
   justify-content: space-between;
   font-size: 1.4rem;
   color: rgb(255, 255, 255);
-}
-
-.show-sidebar .social_links a {
-  font-size: 24px;
-  color: #000;
-  margin: 0 10px;
-}
-
-.show-sidebar .social_links {
   transition: color 0.3s ease-in-out;
 }
 

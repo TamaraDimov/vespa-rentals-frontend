@@ -125,8 +125,8 @@
   box-shadow: 0 20px 25px -5px #ba0d0d1a, 0 10px 10px -5px #0000000a;
 }
 
-/*------------------------------------------------------------------
-[ Input ]*/
+/* ------------------------------------------------------------------
+[ Input ] */
 
 input {
   outline: none;
@@ -136,16 +136,15 @@ input {
 .wrap-input100 {
   width: 100%;
   position: relative;
-  border-bottom: 2px solid rgba(255,255,255,0.24);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.24);
   margin-bottom: 30px;
 }
 
 .input100 {
-  font-family: Poppins-Regular;
+  font-family: Poppins-Regular, sans-serif;
   font-size: 16px;
   color: #fff;
   line-height: 1.2;
-
   display: block;
   width: 100%;
   height: 45px;
@@ -153,8 +152,8 @@ input {
   padding: 0 5px 0 38px;
 }
 
-/*---------------------------------------------*/
-.focus-input100{
+/* --------------------------------------------- */
+.focus-input100 {
   position: absolute;
   display: block;
   width: 100%;
@@ -173,19 +172,17 @@ input {
 }
 
 .focus-input100::before {
-  content: "";
+  content: '';
   display: block;
   position: absolute;
   bottom: -2px;
   left: 0;
   width: 0;
   height: 2px;
-
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
-
   background: #fff;
 }
 
@@ -196,9 +193,8 @@ input {
   width: 100%;
   position: absolute;
   top: 6px;
-  left: 0px;
+  left: 0;
   padding-left: 5px;
-
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
@@ -303,6 +299,7 @@ input {
     justify-content: left;
     gap: 1%;
     color: white;
+
     /* height: 100vh; */
   }
 
@@ -320,5 +317,11 @@ input {
     width: 60%;
     text-align: center;
     font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1180px) {
+  .bg-img {
+    padding: 3vw;
   }
 }
