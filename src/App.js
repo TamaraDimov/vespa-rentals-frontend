@@ -13,14 +13,14 @@ import Reservation from './components/Reservation/Reservation';
 const router = createBrowserRouter([
   {
     path: '/',
+    element: <LoginPage />,
+  },
+  {
+    path: '/motorcycles',
     element: <Layout />,
     children: [
       {
-        path: '/',
-        element: <LoginPage />,
-      },
-      {
-        path: '/motorcycles',
+        path: './',
         element: <Motorcycle />,
       },
       {
@@ -38,11 +38,11 @@ const router = createBrowserRouter([
         loader: async ({ params }) => params,
       },
       {
-        path: '/AddReservation',
+        path: './AddReservation',
         element: <AddReservation />,
       },
       {
-        path: '/Reservation',
+        path: './Reservation',
         element: <Reservation />,
       },
     ],
