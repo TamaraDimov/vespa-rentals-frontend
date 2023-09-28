@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import { addReservation } from '../../redux/reservationActions';
 import { getUserFromLocalStorage } from '../../helpers/LocalStorage';
 import { fetchMotorcycle } from '../../redux/reducers/motorcycleSlice';
@@ -17,10 +18,12 @@ function AddReservation() {
     motorcycle_id: '',
   });
   const motorcycle = useSelector((state) => state.motorcycle);
+  const { user } = useSelector((state) => state.user);
+  const { token } = user.user;
 
   useEffect(() => {
-    dispatch(fetchMotorcycle());
-  }, [dispatch]);
+    dispatch(fetchMotorcycle(token));
+  }, [dispatch, token]);
 
   const handleChange = (event) => {
     const { name, value } = event.target;
@@ -32,14 +35,20 @@ function AddReservation() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(addReservation(reservation));
-    setReservation({
-      start_date: '',
-      end_date: '',
-      city: '',
-      user_id: data.user.data.id,
-      motorcycle_id: '',
-    });
+    try {
+      dispatch(addReservation(reservation));
+      setTimeout(() => {
+        setReservation({
+          start_date: '',
+          end_date: '',
+          city: '',
+          user_id: data.user.data.id,
+          motorcycle_id: '',
+        });
+      }, 3000);
+    } catch (error) {
+      toast.success('Failed to add reservation. Please try again later.');
+    }
   };
 
   const cities = [
@@ -74,7 +83,12 @@ function AddReservation() {
       </label>
       <label htmlFor="city">
         City:
-        <select name="city" value={reservation.city} onChange={handleChange}>
+        <select
+          name="city"
+          id="city"
+          value={reservation.city}
+          onChange={handleChange}
+        >
           <option value="">Select a city</option>
           {cities.map((city) => (
             <option key={city} value={city}>
@@ -92,8 +106,8 @@ function AddReservation() {
           onChange={handleChange}
         >
           <option value="">Select a motorcycle</option>
-          {Array.isArray(motorcycle.motorcycle)
-            && motorcycle.motorcycle.map((motor) => (
+          {Array.isArray(motorcycle.motorcycle) &&
+            motorcycle.motorcycle.map((motor) => (
               <option key={motor.id} value={motor.id}>
                 {motor.name}
               </option>
