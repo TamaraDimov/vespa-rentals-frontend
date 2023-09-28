@@ -1,13 +1,15 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   fetchMotorcycle,
-  deleteMotorcycle,
 } from '../../redux/reducers/motorcycleSlice';
+import PopDelete from './subcomponents/pop/Delete';
 
 const DeleteMotorcycle = () => {
   const motorcycles = useSelector((state) => state.motorcycle);
   const { user } = useSelector((state) => state.user);
+  const [confirm, setConfirm] = useState(false);
+  const [id, setId] = useState();
   const { token } = user.user;
 
   const dispatch = useDispatch();
@@ -16,8 +18,8 @@ const DeleteMotorcycle = () => {
     dispatch(fetchMotorcycle(token));
   }, [dispatch, token]);
 
-  const handleDelete = (id) => {
-    dispatch(deleteMotorcycle(id));
+  const handleConfirmation = () => {
+    setConfirm(!confirm);
   };
 
   const available = motorcycles.motorcycle.length;
@@ -34,6 +36,7 @@ const DeleteMotorcycle = () => {
   return (
     <section>
       <div>
+        {confirm && <PopDelete id={id} confirm={confirm} setConfirm={setConfirm} /> }
         <h1>Available motorcycles</h1>
         <p>{message}</p>
         <div>
@@ -46,7 +49,11 @@ const DeleteMotorcycle = () => {
                   <p>{motorcycle.description}</p>
                   <button
                     type="button"
-                    onClick={() => handleDelete(motorcycle.id)}
+                    onClick={() => {
+                      setId(motorcycle.id);
+                      handleConfirmation();
+                      window.scrollTo(0, 0);
+                    }}
                   >
                     Delete
                   </button>

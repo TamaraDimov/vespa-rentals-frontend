@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { adddMotorcycle } from '../../redux/reducers/motorcycleSlice';
+import Alerts from './subcomponents/pop/Alert';
+import Created from './subcomponents/pop/Created';
 
 export default function AddMotorcycle() {
   const [name, setName] = useState('');
@@ -53,8 +55,8 @@ export default function AddMotorcycle() {
           />
 
           <button type="submit">{returnedMessage === 'pending' ? 'Sending...' : 'submit'}</button>
-          <p>{returnedMessage === 'created' && returnedMessage }</p>
-          <p>{returnedMessage === 'Unprocessable Entity' && returnedMessage }</p>
+          {returnedMessage === 'created' && <Created /> }
+          {returnedMessage === 'Unprocessable Entity' && <Alerts />}
         </form>
       </div>
     </div>
