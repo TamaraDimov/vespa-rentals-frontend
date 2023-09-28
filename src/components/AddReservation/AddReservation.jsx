@@ -36,6 +36,7 @@ function AddReservation() {
       start_date: '',
       end_date: '',
       city: '',
+      user_id: data.user.data.id,
       motorcycle_id: '',
     });
   };
