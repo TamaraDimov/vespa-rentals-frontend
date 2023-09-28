@@ -22,24 +22,20 @@ const router = createBrowserRouter([
       {
         path: '/motorcycles',
         element: <Motorcycle />,
-        errorElement: <></>,
       },
       {
         path: '/motorcycles/:id',
         element: <Detail />,
         loader: async ({ params }) => params,
-        errorElement: <></>,
       },
       {
         path: '/motorcycles/new',
         element: <AddMotorcycle />,
-        errorElement: <></>,
       },
       {
         path: '/motorcycles/delete-motorcycles',
         element: <DeleteMotorcycle />,
         loader: async ({ params }) => params,
-        errorElement: <></>,
       },
     ],
   },
@@ -50,12 +46,10 @@ const router = createBrowserRouter([
       {
         path: '/reservations',
         element: <Reservation />,
-        errorElement: <></>,
       },
       {
         path: '/reservations/new',
         element: <AddReservation />,
-        errorElement: <></>,
       },
     ],
   },
