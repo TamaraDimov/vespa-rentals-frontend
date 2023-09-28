@@ -2,6 +2,7 @@
 
 :root {
   --color-red: #ec1840;
+
   /* --color-purple: #7a18ec; */
   --color-orange: #fa5300;
   --color-white: #fff;
@@ -79,7 +80,7 @@ input {
 
 .input1002 {
   font-family: Poppins-Regular, sans-serif;
-  color: #ffffff;
+  color: #fff;
   line-height: 1.2;
   display: block;
   width: 100%;
@@ -197,8 +198,9 @@ textarea::placeholder {
   font-family: 'Montserrat', sans-serif;
   background-color: #ed5b00;
 }
-.span-3dbutton button:before,
-.span-3dbutton button:after {
+
+.span-3dbutton button::before,
+.span-3dbutton button::after {
   position: absolute;
   content: 'Submit';
   height: 55px;
@@ -209,16 +211,18 @@ textarea::placeholder {
   box-sizing: border-box;
   border-radius: 10px;
   color: #ed5b00;
-  background-color: #ffffff;
+  background-color: #fff;
   border: 4px solid rgb(255, 111, 50);
   transform: rotateY(0deg) translateZ(25px);
 }
-.span-3dbutton button:after {
-  color: #ffffff;
+
+.span-3dbutton button::after {
+  color: #fff;
   background-color: #ed5b00;
   border: 4px solid rgb(255, 255, 255);
   transform: rotateX(90deg) translateZ(25px);
 }
+
 .span-3dbutton button:hover {
   transform: translateZ(-25px) rotateX(-90deg);
 }

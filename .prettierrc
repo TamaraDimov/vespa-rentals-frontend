@@ -1,4 +1,10 @@
 {
+  "react/selfClosingComp": "always",
+  "trailingComma": "es5",
+  "tabWidth": 2,
+  "semi": true,
   "singleQuote": true,
-  "react/selfClosingComp": "always"
+  "jsx-quotes": ["error", "prefer-double"],
+  "printWidth": 80
 }
+

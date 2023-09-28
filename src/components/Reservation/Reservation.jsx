@@ -45,22 +45,22 @@ const Reservations = () => {
           </thead>
           <tbody>
             {reservations.reservations
-              && reservations.reservations.map((reservation) => (
-                <tr key={reservation.id}>
-                  <td>{reservation.start_date}</td>
-                  <td>{reservation.end_date}</td>
-                  <td>{reservation.city}</td>
-                  <td>{reservation.motorcycle.name}</td>
-                  <td>
-                    <button
-                      type="button"
-                      onClick={() => handleDeleteReservation(reservation.id)}
-                    >
-                      Delete
-                    </button>
-                  </td>
-                </tr>
-              ))}
+            && reservations.reservations.map((reservation) => (
+              <tr key={reservation.id}>
+                <td>{reservation.start_date}</td>
+                <td>{reservation.end_date}</td>
+                <td>{reservation.city}</td>
+                <td>{reservation.motorcycle.name}</td>
+                <td>
+                  <button
+                    type="button"
+                    onClick={() => handleDeleteReservation(reservation.id)}
+                  >
+                    Delete
+                  </button>
+                </td>
+              </tr>
+            ))}
           </tbody>
         </table>
       )}
