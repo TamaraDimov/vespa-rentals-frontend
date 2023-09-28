@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { adddMotorcycle } from '../../redux/reducers/motorcycleSlice';
 import Alerts from './subcomponents/pop/Alert';
 import Created from './subcomponents/pop/Created';
+import './AddMotorcycle.css';
 
 export default function AddMotorcycle() {
   const [name, setName] = useState('');
@@ -20,7 +21,7 @@ export default function AddMotorcycle() {
   };
 
   return (
-    <div>
+    <div className="add-motorcycle-container">
       <h1>Add new motorcycle</h1>
       <div>
         <form onSubmit={handleSubmission}>

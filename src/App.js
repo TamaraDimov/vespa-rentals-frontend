@@ -9,6 +9,7 @@ import Layout from './layout/Layout';
 import AddMotorcycle from './components/motorcycle/AddMototorcycle';
 import AddReservation from './components/AddReservation/AddReservation';
 import Reservation from './components/Reservation/Reservation';
+// import Sidebar from './components/Sidebar/Sidebar';
 
 const router = createBrowserRouter([
   {
@@ -25,16 +26,16 @@ const router = createBrowserRouter([
       },
       {
         path: '/motorcycles/:id',
-        element: ((<Detail />), (<Sidebar />)),
+        element: <Detail />,
         loader: async ({ params }) => params,
       },
       {
         path: '/motorcycles/new',
-        element: ((<AddMotorcycle />), (<Sidebar />)),
+        element: <AddMotorcycle />,
       },
       {
         path: '/motorcycles/delete-motorcycles',
-        element: ((<DeleteMotorcycle />), (<Sidebar />)),
+        element: <DeleteMotorcycle />,
         loader: async ({ params }) => params,
       },
     ],

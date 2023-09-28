@@ -4,13 +4,14 @@
 }
 
 .show-sidebar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 280px;
   height: 100vh;
+  width: 20vw;
+  z-index: 1;
   background-color: #fff;
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 50px rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .show-sidebar header {
@@ -40,7 +41,7 @@
 
 .show-sidebar .nav-links a {
   display: block;
-  padding: 10px 10px 10px 20px;
+  padding: 6px 6px 6px 15px;
   color: #000;
   text-decoration: none;
 }
@@ -68,18 +69,16 @@
   border-radius: 10px;
 }
 
-.show-sidebar .footer {
-  position: absolute;
+.footer {
   bottom: 0;
-  left: 0;
-  width: 100%;
   padding: 20px;
+  width: 100%;
   background-color: #050000;
+  border: 2px solid red;
 }
 
 .show-sidebar .social_links {
   text-align: center;
-  width: 70%;
   margin: 0 auto;
   display: flex;
   justify-content: space-between;
