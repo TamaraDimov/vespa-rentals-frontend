@@ -8,6 +8,7 @@ const data = getUserFromLocalStorage();
 
 function AddReservation() {
   const dispatch = useDispatch();
+  const status = useSelector((state) => state.reservation.status);
   const [reservation, setReservation] = useState({
     start_date: '',
     end_date: '',
@@ -99,7 +100,9 @@ function AddReservation() {
             ))}
         </select>
       </label>
-      <button type="submit">Add Reservation</button>
+      <button type="submit" disabled={status === 'saving'}>
+        {status === 'saving' ? 'Saving...' : 'Add Reservation'}
+      </button>
     </form>
   );
 }
