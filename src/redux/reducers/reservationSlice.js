@@ -40,11 +40,12 @@ const reservationSlice = createSlice({
         state.error = action.error.message;
       })
       .addCase(deleteReservation.fulfilled, (state, action) => {
-        // Remove the deleted reservation from the state
-        const deletedReservationId = action.payload.id;
-        state.reservations = state.reservations.filter(
-          (reservation) => reservation.id !== deletedReservationId,
-        );
+        if (action.payload && action.payload.id) {
+          const deletedReservationId = action.payload.id;
+          state.reservations = state.reservations.filter(
+            (reservation) => reservation.id !== deletedReservationId,
+          );
+        }
       });
   },
 });
