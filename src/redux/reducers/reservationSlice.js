@@ -1,5 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { fetchReservations, addReservation } from '../reservationActions';
+import {
+  fetchReservations,
+  addReservation,
+  deleteReservation,
+} from '../reservationActions';
 
 const initialState = {
   reservations: [],
@@ -34,6 +38,13 @@ const reservationSlice = createSlice({
       .addCase(addReservation.rejected, (state, action) => {
         state.status = 'failure';
         state.error = action.error.message;
+      })
+      .addCase(deleteReservation.fulfilled, (state, action) => {
+        // Remove the deleted reservation from the state
+        const deletedReservationId = action.payload.id;
+        state.reservations = state.reservations.filter(
+          (reservation) => reservation.id !== deletedReservationId,
+        );
       });
   },
 });

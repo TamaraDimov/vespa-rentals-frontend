@@ -6,18 +6,19 @@ import Motorcycle from './components/motorcycle/Motorcycle';
 import Detail from './components/motorcycle/Detail';
 import DeleteMotorcycle from './components/motorcycle/DeleteMotorcycle';
 import Layout from './layout/Layout';
+import AddMotorcycle from './components/motorcycle/AddMototorcycle';
 import AddReservation from './components/AddReservation/AddReservation';
 import Reservation from './components/Reservation/Reservation';
 
 const router = createBrowserRouter([
   {
     path: '/',
+    element: <LoginPage />,
+  },
+  {
+    path: '/motorcycles',
     element: <Layout />,
     children: [
-      {
-        path: '/',
-        element: <LoginPage />,
-      },
       {
         path: '/motorcycles',
         element: <Motorcycle />,
@@ -28,17 +29,27 @@ const router = createBrowserRouter([
         loader: async ({ params }) => params,
       },
       {
+        path: '/motorcycles/new',
+        element: <AddMotorcycle />,
+      },
+      {
         path: '/motorcycles/delete-motorcycles',
         element: <DeleteMotorcycle />,
         loader: async ({ params }) => params,
       },
+    ],
+  },
+  {
+    path: '/reservations',
+    element: <Layout />,
+    children: [
       {
-        path: '/AddReservation',
-        element: <AddReservation />,
+        path: '/reservations',
+        element: <Reservation />,
       },
       {
-        path: '/Reservation',
-        element: <Reservation />,
+        path: '/reservations/new',
+        element: <AddReservation />,
       },
     ],
   },

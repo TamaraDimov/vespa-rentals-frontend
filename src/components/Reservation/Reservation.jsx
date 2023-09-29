@@ -1,6 +1,10 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchReservations } from '../../redux/reservationActions';
+import { toast } from 'react-toastify';
+import {
+  fetchReservations,
+  deleteReservation,
+} from '../../redux/reservationActions';
 
 const Reservations = () => {
   const reservations = useSelector((state) => state.reservation);
@@ -9,6 +13,15 @@ const Reservations = () => {
   useEffect(() => {
     dispatch(fetchReservations());
   }, [dispatch]);
+
+  const handleDeleteReservation = async (reservationId) => {
+    try {
+      await dispatch(deleteReservation(reservationId));
+      toast.success('Reservation deleted successfully');
+    } catch (error) {
+      toast.error('Failed to delete reservation');
+    }
+  };
 
   return (
     <div>
@@ -38,6 +51,14 @@ const Reservations = () => {
                   <td>{reservation.end_date}</td>
                   <td>{reservation.city}</td>
                   <td>{reservation.motorcycle.name}</td>
+                  <td>
+                    <button
+                      type="button"
+                      onClick={() => handleDeleteReservation(reservation.id)}
+                    >
+                      Delete
+                    </button>
+                  </td>
                 </tr>
               ))}
           </tbody>

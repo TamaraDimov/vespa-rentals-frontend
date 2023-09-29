@@ -4,11 +4,11 @@ import API_URL from '../../app/API_URL';
 
 const data = getUserFromLocalStorage();
 
-export const fetchMotorcycle = createAsyncThunk('get/ferchMortcycle', async () => {
+export const fetchMotorcycle = createAsyncThunk('get/ferchMortcycle', async (token) => {
   try {
     const motorcycleData = await fetch('http://localhost:4000/api/v1/motorcycles', {
       headers: {
-        Authorization: `Bearer ${data.user.token}`,
+        Authorization: `Bearer ${token}`,
       },
     });
     const dataJson = motorcycleData.json();
@@ -17,6 +17,25 @@ export const fetchMotorcycle = createAsyncThunk('get/ferchMortcycle', async () =
     return error;
   }
 });
+
+export const fetchUser = createAsyncThunk(
+  'get/fetchUser',
+  async (token) => {
+    try {
+      const motorcycleData = await fetch(
+        'http://localhost:4000/current_user', {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        },
+      );
+      const dataJson = motorcycleData.status;
+      return dataJson;
+    } catch (error) {
+      return error;
+    }
+  },
+);
 
 export const fetchSpecificMotorcycle = createAsyncThunk(
   'get/fetchSpecificMotorcycle',
@@ -56,39 +75,100 @@ export const deleteMotorcycle = createAsyncThunk(
   },
 );
 
+export const adddMotorcycle = createAsyncThunk(
+  'get/adddMotorcycle',
+  async (params) => {
+    try {
+      const motorcycleData = await fetch(
+        'http://localhost:4000/api/v1/motorcycles', {
+          method: 'POST',
+          headers: {
+            Authorization: `Bearer ${data.user.token}`,
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(params),
+        },
+      );
+      const dataJson = motorcycleData.status;
+      return dataJson;
+    } catch (error) {
+      return error;
+    }
+  },
+);
+
 const motorcycleSlice = createSlice({
   name: 'motorcycle',
   initialState: {
     motorcycle: {},
     status: false,
+    isLoading: false,
+    returnedMessage: '',
     specificMotorcycle: {
       motorcycle: {},
-      status: false,
+      isLoading: false,
     },
   },
   extraReducers(builder) {
     builder
       .addCase(fetchMotorcycle.pending, (state) => {
-        state.status = false;
+        state.isLoading = false;
       })
       .addCase(fetchMotorcycle.fulfilled, (state, action) => {
-        state.status = true;
+        state.isLoading = true;
         state.motorcycle = action.payload;
       })
+
       .addCase(fetchSpecificMotorcycle.pending, (state) => {
-        state.specificMotorcycle.status = false;
+        state.specificMotorcycle.isLoading = false;
       })
+
+      .addCase(fetchSpecificMotorcycle.rejected, (state) => {
+        state.specificMotorcycle.isLoading = false;
+      })
+
       .addCase(fetchSpecificMotorcycle.fulfilled, (state, action) => {
-        state.specificMotorcycle.status = true;
+        state.specificMotorcycle.isLoading = true;
         state.specificMotorcycle.motorcycle = action.payload;
       })
+
+      .addCase(adddMotorcycle.rejected, (state) => {
+        state.returnedMessage = 'pending';
+      })
+
+      .addCase(adddMotorcycle.pending, (state) => {
+        state.returnedMessage = 'pending';
+      })
+
+      .addCase(adddMotorcycle.fulfilled, (state, action) => {
+        if (action.payload === 201) {
+          state.returnedMessage = 'created';
+        } else {
+          state.returnedMessage = 'Unprocessable Entity';
+        }
+      })
+
+      .addCase(fetchUser.rejected, (state) => {
+        state.status = false;
+      })
+
+      .addCase(fetchUser.pending, (state) => {
+        state.status = false;
+      })
+
+      .addCase(fetchUser.fulfilled, (state, action) => {
+        state.status = action.payload;
+      })
+
       .addCase(deleteMotorcycle.pending, (state) => {
         state.status = 'deleting';
       })
+
       .addCase(deleteMotorcycle.fulfilled, (state, action) => {
         state.status = 'success';
         state.motorcycle.push(action.payload);
       })
+
       .addCase(deleteMotorcycle.rejected, (state, action) => {
         state.status = 'failure';
         state.error = action.error.message;
