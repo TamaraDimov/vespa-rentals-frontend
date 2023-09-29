@@ -1,5 +1,6 @@
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import { Provider } from 'react-redux';
+import { ToastContainer } from 'react-toastify';
 import LoginPage from './components/login/Login-page';
 import store from './app/store';
 import Motorcycle from './components/motorcycle/Motorcycle';
@@ -60,6 +61,7 @@ function App() {
     <div className="App">
       <Provider store={store}>
         <RouterProvider router={router} />
+        <ToastContainer />
       </Provider>
     </div>
   );
