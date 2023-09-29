@@ -4,6 +4,7 @@ import {
   fetchMotorcycle,
 } from '../../redux/reducers/motorcycleSlice';
 import PopDelete from './subcomponents/pop/Delete';
+import './DeleteMotorcycle.css';
 
 const DeleteMotorcycle = () => {
   const motorcycles = useSelector((state) => state.motorcycle);
@@ -34,21 +35,22 @@ const DeleteMotorcycle = () => {
 }`;
 
   return (
-    <section>
-      <div>
+    <section className="delete-motorcycle-bg">
+      <div className="delete-motorcycle-container">
         {confirm && <PopDelete id={id} confirm={confirm} setConfirm={setConfirm} /> }
         <h1>Available motorcycles</h1>
         <p>{message}</p>
-        <div>
+        <div className="delete-motorcycle-list-all">
           {Array.isArray(motorcycles.motorcycle)
             && motorcycles.motorcycle.map((motorcycle) => (
-              <li key={motorcycle.id}>
+              <li key={motorcycle.id} className="delete-motorcycle-list">
                 <img src={motorcycle.photo} alt={motorcycle.model} />
                 <div>
                   <h2>{motorcycle.name}</h2>
                   <p>{motorcycle.description}</p>
                   <button
                     type="button"
+                    className="del-btn-danger"
                     onClick={() => {
                       setId(motorcycle.id);
                       handleConfirmation();

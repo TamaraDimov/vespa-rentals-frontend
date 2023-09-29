@@ -1,0 +1,93 @@
+/* Delete motorcycle page styles */
+
+/* Page container */
+.delete-motorcycle-bg {
+    background-color: #e35e0a;
+    background-image: url('../../assets/Delete_bg.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Container for motorcycle list */
+.delete-motorcycle-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    max-width: 800px;
+    width: 100%;
+}
+
+/* Heading */
+h1 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Message */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Motorcycle list */
+.delete-motorcycle-list-all {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    text-align: center;
+}
+
+/* Motorcycle item */
+.delete-motorcycle-list li {
+    width: calc(33.33% - 20px);
+    margin-bottom: 30px;
+    position: relative;
+}
+
+.delete-motorcycle-list li img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.delete-motorcycle-list li h2 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.delete-motorcycle-list li p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.del-btn-danger{
+    background-color: #fff;
+    color: #e35e0a;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+    bottom: 20px;
+    left: 50%;
+}
+
+.del-btn-danger:hover {
+    background-color: #e3200a;
+    color: #fff;
+}
