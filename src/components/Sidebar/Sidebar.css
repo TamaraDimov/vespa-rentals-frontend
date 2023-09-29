@@ -57,7 +57,15 @@
   color: #000;
 }
 
-.show-sidebar button {
+.top-nav-container {
+  display: flex;
+  flex-direction: column;
+  height: 50%;
+  justify-content: space-between;
+}
+
+.logout-button {
+  justify-self: flex-end;
   display: flex;
   justify-content: center;
   margin: 0 auto;
@@ -69,6 +77,12 @@
   font-size: 16px;
   cursor: pointer;
   border-radius: 10px;
+}
+
+.logout-button:hover {
+  color: #fffffe;
+  background-color: red;
+  border: 2px solid red;
 }
 
 .footer {

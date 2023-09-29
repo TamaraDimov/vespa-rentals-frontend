@@ -26,11 +26,13 @@ const Sidebar = () => {
 
   return (
     <div className="show-sidebar">
-      <header>
-        <img src={Logo} alt="logo" style={{ width: '200px' }} />
-      </header>
-      <NavLinks />
-      <button type="button" onClick={handleLogout}>
+      <div className="top-nav-container">
+        <header>
+          <img src={Logo} alt="logo" style={{ width: '200px' }} />
+        </header>
+        <NavLinks />
+      </div>
+      <button type="button" className="logout-button" onClick={handleLogout}>
         Logout
       </button>
       <div className="footer">

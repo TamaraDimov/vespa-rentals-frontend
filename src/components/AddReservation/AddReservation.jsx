@@ -61,86 +61,70 @@ function AddReservation() {
   ];
 
   return (
-    <form onSubmit={handleSubmit} className="reservation-form">
-      {' '}
-      <label htmlFor="start_date" className="form-label">
-        Start Date:
-        {' '}
-        <input
-          type="date"
-          name="start_date"
-          id="start_date"
-          value={reservation.start_date}
-          onChange={handleChange}
-          className="form-input"
-        />
-        {' '}
-      </label>
-      {' '}
-      <label htmlFor="end_date" className="form-label">
-        End Date:
-        {' '}
-        <input
-          type="date"
-          name="end_date"
-          id="end_date"
-          value={reservation.end_date}
-          onChange={handleChange}
-          className="form-input"
-        />
-        {' '}
-      </label>
-      {' '}
-      <label htmlFor="city" className="form-label">
-        City:
-        {' '}
-        <select
-          name="city"
-          id="city"
-          value={reservation.city}
-          onChange={handleChange}
-          className="form-select"
-        >
-          <option value="">Select a city</option>
-          {' '}
-          {cities.map((city) => (
-            <option key={city} value={city}>
-              {city}
-              {' '}
-            </option>
-          ))}
-          {' '}
-        </select>
-        {' '}
-      </label>
-      {' '}
-      <label htmlFor="motorcycle_id" className="form-label">
-        Motorcycle:
-        {' '}
-        <select
-          name="motorcycle_id"
-          id="motorcycle_id"
-          value={reservation.motorcycle_id}
-          onChange={handleChange}
-          className="form-select"
-        >
-          <option value="">Select a motorcycle</option>
-          {' '}
-          {Array.isArray(motorcycle.motorcycle)
-          && motorcycle.motorcycle.map((motor) => (
-            <option key={motor.id} value={motor.id}>
-              {motor.name}
-              {' '}
-            </option>
-          ))}
-          {' '}
-        </select>
-        {' '}
-      </label>
-      <button type="submit" disabled={status === 'saving'}>
-        {status === 'saving' ? 'Saving...' : 'Add Reservation'}
-      </button>
-    </form>
+    <div className="reservation-container">
+      <form onSubmit={handleSubmit} className="reservation-form">
+        <label htmlFor="start_date" className="form-label">
+          Start Date:
+          <input
+            type="date"
+            name="start_date"
+            id="start_date"
+            value={reservation.start_date}
+            onChange={handleChange}
+            className="form-input"
+          />
+        </label>
+        <label htmlFor="end_date" className="form-label">
+          End Date:
+          <input
+            type="date"
+            name="end_date"
+            id="end_date"
+            value={reservation.end_date}
+            onChange={handleChange}
+            className="form-input"
+          />
+        </label>
+        <label htmlFor="city" className="form-label">
+          City:
+          <select
+            name="city"
+            id="city"
+            value={reservation.city}
+            onChange={handleChange}
+            className="form-select"
+          >
+            <option value="">Select a city</option>
+            {cities.map((city) => (
+              <option key={city} value={city}>
+                {city}
+              </option>
+            ))}
+          </select>
+        </label>
+        <label htmlFor="motorcycle_id" className="form-label">
+          Motorcycle:
+          <select
+            name="motorcycle_id"
+            id="motorcycle_id"
+            value={reservation.motorcycle_id}
+            onChange={handleChange}
+            className="form-select"
+          >
+            <option value="">Select a motorcycle</option>
+            {Array.isArray(motorcycle.motorcycle)
+            && motorcycle.motorcycle.map((motor) => (
+              <option key={motor.id} value={motor.id}>
+                {motor.name}
+              </option>
+            ))}
+          </select>
+        </label>
+        <button type="submit" disabled={status === 'saving'}>
+          {status === 'saving' ? 'Saving...' : 'Add Reservation'}
+        </button>
+      </form>
+    </div>
   );
 }
 
