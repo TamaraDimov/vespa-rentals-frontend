@@ -64,6 +64,7 @@ export const deleteReservation = createAsyncThunk(
       }
 
       toast.success('Successfully deleted reservation');
+      return { id: reservationId };
     } catch (error) {
       throw new Error(error.message);
     }

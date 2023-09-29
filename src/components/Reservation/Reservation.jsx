@@ -14,10 +14,9 @@ const Reservations = () => {
     dispatch(fetchReservations());
   }, [dispatch]);
 
-  const handleDeleteReservation = async (reservationId) => {
+  const handleDeleteReservation = (reservationId) => {
     try {
-      await dispatch(deleteReservation(reservationId));
-      toast.success('Reservation deleted successfully');
+      dispatch(deleteReservation(reservationId));
     } catch (error) {
       toast.error('Failed to delete reservation');
     }
@@ -45,22 +44,24 @@ const Reservations = () => {
           </thead>
           <tbody>
             {reservations.reservations
-            && reservations.reservations.map((reservation) => (
-              <tr key={reservation.id}>
-                <td>{reservation.start_date}</td>
-                <td>{reservation.end_date}</td>
-                <td>{reservation.city}</td>
-                <td>{reservation.motorcycle.name}</td>
-                <td>
-                  <button
-                    type="button"
-                    onClick={() => handleDeleteReservation(reservation.id)}
-                  >
-                    Delete
-                  </button>
-                </td>
-              </tr>
-            ))}
+              && reservations.reservations.map((reservation) => (
+                <tr key={reservation.id}>
+                  <td>{reservation.start_date}</td>
+                  <td>{reservation.end_date}</td>
+                  <td>{reservation.city}</td>
+                  <td>{reservation.motorcycle.name}</td>
+                  <td>
+                    {reservations.status !== 'loading' && reservation.id && (
+                      <button
+                        type="button"
+                        onClick={() => handleDeleteReservation(reservation.id)}
+                      >
+                        Delete
+                      </button>
+                    )}
+                  </td>
+                </tr>
+              ))}
           </tbody>
         </table>
       )}

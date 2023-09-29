@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { toast } from 'react-toastify';
 import { addReservation } from '../../redux/reservationActions';
 import { getUserFromLocalStorage } from '../../helpers/LocalStorage';
 import { fetchMotorcycle } from '../../redux/reducers/motorcycleSlice';
@@ -9,6 +10,7 @@ const data = getUserFromLocalStorage();
 
 function AddReservation() {
   const dispatch = useDispatch();
+  const status = useSelector((state) => state.reservation.status);
   const [reservation, setReservation] = useState({
     start_date: '',
     end_date: '',
@@ -34,13 +36,20 @@ function AddReservation() {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    dispatch(addReservation(reservation));
-    setReservation({
-      start_date: '',
-      end_date: '',
-      city: '',
-      motorcycle_id: '',
-    });
+    try {
+      dispatch(addReservation(reservation));
+      setTimeout(() => {
+        setReservation({
+          start_date: '',
+          end_date: '',
+          city: '',
+          user_id: data.user.data.id,
+          motorcycle_id: '',
+        });
+      }, 3000);
+    } catch (error) {
+      toast.success('Failed to add reservation. Please try again later.');
+    }
   };
 
   const cities = [
@@ -128,10 +137,8 @@ function AddReservation() {
         </select>
         {' '}
       </label>
-      {' '}
-      <button type="submit" className="form-button">
-        Add Reservation
-        {' '}
+      <button type="submit" disabled={status === 'saving'}>
+        {status === 'saving' ? 'Saving...' : 'Add Reservation'}
       </button>
     </form>
   );
