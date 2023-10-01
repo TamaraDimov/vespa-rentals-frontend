@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import {
-  fetchMotorcycle,
-} from '../../redux/reducers/motorcycleSlice';
+import { ChevronLeft, ChevronRight } from 'react-feather';
+
+import { fetchMotorcycle } from '../../redux/reducers/motorcycleSlice';
 import PopDelete from './subcomponents/pop/Delete';
 import './DeleteMotorcycle.css';
 
@@ -12,8 +12,13 @@ const DeleteMotorcycle = () => {
   const [confirm, setConfirm] = useState(false);
   const [id, setId] = useState();
   const { token } = user.user;
+  const [curr, setCurr] = useState(0);
 
   const dispatch = useDispatch();
+
+  const prev = () => setCurr((curr) => (curr === 0 ? motorcycles.motorcycle.length - 1 : curr - 1));
+
+  const next = () => setCurr((curr) => (curr === motorcycles.motorcycle.length - 1 ? 0 : curr + 1));
 
   useEffect(() => {
     dispatch(fetchMotorcycle(token));
@@ -36,32 +41,55 @@ const DeleteMotorcycle = () => {
 
   return (
     <section className="delete-motorcycle-bg">
-      <div className="delete-motorcycle-container">
-        {confirm && <PopDelete id={id} confirm={confirm} setConfirm={setConfirm} /> }
+      <div className="delete-motorcycle-container overflow-hidden relative">
+        {confirm && (
+          <PopDelete id={id} confirm={confirm} setConfirm={setConfirm} />
+        )}
         <h1>Available motorcycles</h1>
         <p>{message}</p>
-        <div className="delete-motorcycle-list-all">
+        <div
+          className="delete-motorcycle-list-all flex transition-transform ease-out duration-500"
+          style={{ transform: `translateX(-${curr * 100}%)` }}
+        >
           {Array.isArray(motorcycles.motorcycle)
-            && motorcycles.motorcycle.map((motorcycle) => (
-              <li key={motorcycle.id} className="delete-motorcycle-list">
-                <img src={motorcycle.photo} alt={motorcycle.model} />
-                <div>
-                  <h2>{motorcycle.name}</h2>
-                  <p>{motorcycle.description}</p>
-                  <button
-                    type="button"
-                    className="del-btn-danger"
-                    onClick={() => {
-                      setId(motorcycle.id);
-                      handleConfirmation();
-                      window.scrollTo(0, 0);
-                    }}
-                  >
-                    Delete
-                  </button>
-                </div>
-              </li>
+            && motorcycles.motorcycle.map((motorcycle, index) => (
+              <div key={motorcycle.id} className={`delete-motorcycle-list flex-none w-full ${index !== curr ? 'hidden opacity-0 transition-opacity duration-500' : 'opacity-100 transition-opacity duration-500'}`}>
+                <li>
+                  <img src={motorcycle.photo} alt={motorcycle.model} className="w-full h-full object-cover" />
+                  <div>
+                    <h2>{motorcycle.name}</h2>
+                    <p>{motorcycle.description}</p>
+                    <button
+                      type="button"
+                      className="del-btn-danger"
+                      onClick={() => {
+                        setId(motorcycle.id);
+                        handleConfirmation();
+                        window.scrollTo(0, 0);
+                      }}
+                    >
+                      Delete
+                    </button>
+                  </div>
+                </li>
+              </div>
             ))}
+        </div>
+        <div className="absolute inset-0 flex items-center justify-between p-3">
+          <button
+            type="button"
+            onClick={prev}
+            className="p-1 rounded-full shadow bg-black/80 text-white hover:bg-gray-500"
+          >
+            <ChevronLeft />
+          </button>
+          <button
+            type="button"
+            onClick={next}
+            className="p-1 rounded-full shadow bg-black/80 text-white hover:bg-gray-500"
+          >
+            <ChevronRight />
+          </button>
         </div>
       </div>
     </section>
