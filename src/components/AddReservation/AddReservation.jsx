@@ -9,16 +9,16 @@ function AddReservation() {
   const dispatch = useDispatch();
   const status = useSelector((state) => state.reservation.status);
   const user = useSelector((state) => state.user.user);
-  const token = user ? user.token : '';
+  const token = user ? user.user.token : '';
   const [reservation, setReservation] = useState({
     start_date: '',
     end_date: '',
     city: '',
-    user_id: user && user.data ? user.data.id : '',
+    user_id: user && user.user.data ? user.user.data.id : '',
     motorcycle_id: '',
   });
   const motorcycle = useSelector((state) => state.motorcycle);
-  
+
   useEffect(() => {
     dispatch(fetchMotorcycle(token));
   }, [dispatch, token]);
@@ -40,7 +40,7 @@ function AddReservation() {
           start_date: '',
           end_date: '',
           city: '',
-          user_id: user && user.data ? user.data.id : '',
+          user_id: user && user.user.data ? user.user.data.id : '',
           motorcycle_id: '',
         });
       }, 3000);
