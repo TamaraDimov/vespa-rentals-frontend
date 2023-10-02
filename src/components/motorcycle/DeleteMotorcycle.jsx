@@ -9,27 +9,27 @@ import './DeleteMotorcycle.css';
 const DeleteMotorcycle = () => {
   const motorcycles = useSelector((state) => state.motorcycle);
   const { user } = useSelector((state) => state.user);
+  const [motorcycleList, setMotorcycleList] = useState(motorcycles.motorcycle);
   const [confirm, setConfirm] = useState(false);
   const [id, setId] = useState();
   const { token } = user.user;
   const [curr, setCurr] = useState(0);
 
   const dispatch = useDispatch();
+  const prev = () => setCurr((curr) => (curr === 0 ? motorcycleList.length - 1 : curr - 1));
 
-  const prev = () => setCurr((curr) => (curr === 0 ? motorcycles.motorcycle.length - 1 : curr - 1));
-
-  const next = () => setCurr((curr) => (curr === motorcycles.motorcycle.length - 1 ? 0 : curr + 1));
+  const next = () => setCurr((curr) => (curr === motorcycleList.length - 1 ? 0 : curr + 1));
 
   useEffect(() => {
     dispatch(fetchMotorcycle(token));
-  }, [dispatch, token]);
+    setMotorcycleList(motorcycles.motorcycle);
+  }, [motorcycles.motorcycle, dispatch, token]);
 
   const handleConfirmation = () => {
     setConfirm(!confirm);
   };
 
-  const available = motorcycles.motorcycle.length;
-
+  const available = motorcycleList.length;
   const message = `We have ${available} motorcycle${
     available !== 1 ? 's' : ''
   } available.
@@ -51,8 +51,8 @@ const DeleteMotorcycle = () => {
           className="delete-motorcycle-list-all flex transition-transform ease-out duration-500"
           style={{ transform: `translateX(-${curr * 100}%)` }}
         >
-          {Array.isArray(motorcycles.motorcycle)
-            && motorcycles.motorcycle.map((motorcycle, index) => (
+          {Array.isArray(motorcycleList)
+            && motorcycleList.map((motorcycle, index) => (
               <div
                 key={motorcycle.id}
                 className={`delete-motorcycle-list flex-none w-full ${
@@ -104,8 +104,8 @@ const DeleteMotorcycle = () => {
         </div>
         <div className="absolute bottom-4 right-0 left-0">
           <div className="flex items-center justify-center gap-2">
-            {Array.isArray(motorcycles.motorcycle)
-              && motorcycles.motorcycle.map((motorcycle, i) => (
+            {Array.isArray(motorcycleList)
+              && motorcycleList.map((motorcycle, i) => (
                 // eslint-disable-next-line react/jsx-key
                 <div
                   className={`

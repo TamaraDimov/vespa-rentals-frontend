@@ -18,7 +18,7 @@ const registerUser = createAsyncThunk(
   'user/registerUser',
   async ({ email, username, password }) => {
     try {
-      const resp = await customFetch.post('http://localhost:4000/signup', {
+      const resp = await customFetch.post('https://vespa.onrender.com/signup', {
         user: {
           email,
           username,
@@ -36,7 +36,7 @@ const loginUser = createAsyncThunk(
   'user/loginUser',
   async ({ email, username, password }) => {
     try {
-      const resp = await customFetch.post('http://localhost:4000/login', {
+      const resp = await customFetch.post('https://vespa.onrender.com/login', {
         user: {
           email,
           username,
