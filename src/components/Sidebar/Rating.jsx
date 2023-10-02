@@ -7,17 +7,19 @@ const StarRating = () => {
   const user = useSelector((state) => state.user.user);
   const [rating, setRating] = useState(() => {
     const storedRating = localStorage.getItem(
-      `starRating_${user && user.user.data ? user.user.data.id : ''}`
+      `starRating_${(user && user.user?.data?.id) || ''}`,
     );
     return storedRating ? parseInt(storedRating, 10) : 0;
   });
 
   useEffect(() => {
-    localStorage.setItem(
-      `starRating_${user && user.user.data ? user.user.data.id : ''}`,
-      rating.toString()
-    );
-  }, [rating, user, user.user.data.id]);
+    if (user && user.user && user.user.data && user.user.data.id) {
+      localStorage.setItem(
+        `starRating_${user.user.data.id}`,
+        rating.toString(),
+      );
+    }
+  }, [rating, user]);
 
   const handleRatingChange = (selectedRating) => {
     setRating(selectedRating);
