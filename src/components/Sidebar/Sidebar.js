@@ -11,6 +11,7 @@ import './Sidebar.css';
 import NavLinks from './Navlinks';
 import Logo from '../../assets/logo.png';
 import { logoutUser } from '../../redux/reducers/userSlice';
+import StarRating from './Rating';
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -35,6 +36,9 @@ const Sidebar = () => {
       <button type="button" className="logout-button" onClick={handleLogout}>
         Logout
       </button>
+      <div className="rating">
+        <StarRating />
+      </div>
       <div className="footer">
         <div className="social_links">
           <FaTwitter />

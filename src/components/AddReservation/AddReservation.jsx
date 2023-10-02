@@ -2,25 +2,22 @@ import React, { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-toastify';
 import { addReservation } from '../../redux/reservationActions';
-import { getUserFromLocalStorage } from '../../helpers/LocalStorage';
 import { fetchMotorcycle } from '../../redux/reducers/motorcycleSlice';
 import './AddReservation.css';
-
-const data = getUserFromLocalStorage();
 
 function AddReservation() {
   const dispatch = useDispatch();
   const status = useSelector((state) => state.reservation.status);
+  const user = useSelector((state) => state.user.user);
+  const token = user ? user.user.token : '';
   const [reservation, setReservation] = useState({
     start_date: '',
     end_date: '',
     city: '',
-    user_id: data.user.data.id,
+    user_id: user && user.user.data ? user.user.data.id : '',
     motorcycle_id: '',
   });
   const motorcycle = useSelector((state) => state.motorcycle);
-  const { user } = useSelector((state) => state.user);
-  const { token } = user.user;
 
   useEffect(() => {
     dispatch(fetchMotorcycle(token));
@@ -43,7 +40,7 @@ function AddReservation() {
           start_date: '',
           end_date: '',
           city: '',
-          user_id: data.user.data.id,
+          user_id: user && user.user.data ? user.user.data.id : '',
           motorcycle_id: '',
         });
       }, 3000);
