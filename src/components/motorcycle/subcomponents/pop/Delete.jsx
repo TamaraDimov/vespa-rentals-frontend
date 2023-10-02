@@ -24,7 +24,7 @@ export default function PopDelete({ id, confirm, setConfirm }) {
             variant="btn btn-danger"
             onClick={() => {
               dispatch(deleteMotorcycle(id));
-              window.location.reload();
+              setConfirm(!confirm);
             }}
           >
             Delete
