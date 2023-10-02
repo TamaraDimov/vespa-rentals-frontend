@@ -10,6 +10,7 @@ import Layout from './layout/Layout';
 import AddMotorcycle from './components/motorcycle/AddMototorcycle';
 import AddReservation from './components/AddReservation/AddReservation';
 import Reservation from './components/Reservation/Reservation';
+// import Sidebar from './components/Sidebar/Sidebar';
 
 const router = createBrowserRouter([
   {

@@ -2,8 +2,11 @@ import React from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { FaFacebook, FaTwitter, FaGoogle } from 'react-icons/fa';
+import { BiLogoPinterestAlt } from 'react-icons/bi';
+import { BsVimeo } from 'react-icons/bs';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import './Sidebar.css';
 
 import NavLinks from './Navlinks';
 import Logo from '../../assets/logo.png';
@@ -23,11 +26,13 @@ const Sidebar = () => {
 
   return (
     <div className="show-sidebar">
-      <header>
-        <img src={Logo} alt="logo" style={{ width: '100px' }} />
-      </header>
-      <NavLinks />
-      <button type="button" onClick={handleLogout}>
+      <div className="top-nav-container">
+        <header>
+          <img src={Logo} alt="logo" style={{ width: '200px' }} />
+        </header>
+        <NavLinks />
+      </div>
+      <button type="button" className="logout-button" onClick={handleLogout}>
         Logout
       </button>
       <div className="footer">
@@ -35,6 +40,8 @@ const Sidebar = () => {
           <FaTwitter />
           <FaFacebook />
           <FaGoogle />
+          <BsVimeo />
+          <BiLogoPinterestAlt />
         </div>
       </div>
     </div>

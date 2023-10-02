@@ -108,13 +108,13 @@
 }
 
 .form {
-  max-width: 600px;
+  max-width: 500px;
   border: 4px solid #f07900;
   background: rgba(255, 255, 255, 0.1);
   border-radius: 2rem;
   box-shadow: 0 4px 6px -1px #9854001a, 0 2px 4px -1px #0000000f;
   padding: 2.5rem 3rem;
-  margin: 10% 0 10% 20%;
+  margin: 10% 0 10% 15%;
   transition: 0.3s ease-in-out all;
   color: white;
   display: flex;
@@ -122,23 +122,29 @@
 }
 
 .form:hover {
-  box-shadow: 0 20px 25px -5px #0000001a, 0 10px 10px -5px #0000000a;
+  box-shadow: 0 20px 25px -5px #ba0d0d1a, 0 10px 10px -5px #0000000a;
+}
+
+/* ------------------------------------------------------------------
+[ Input ] */
+
+input {
+  outline: none;
+  border: none;
 }
 
 .wrap-input100 {
-  margin-top: 4%;
   width: 100%;
   position: relative;
-  border-bottom: 3px solid rgba(255, 255, 255, 0.24);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.24);
   margin-bottom: 30px;
 }
 
-.form-input {
+.input100 {
   font-family: Poppins-Regular, sans-serif;
   font-size: 16px;
   color: #fff;
   line-height: 1.2;
-  border: none;
   display: block;
   width: 100%;
   height: 45px;
@@ -146,29 +152,27 @@
   padding: 0 5px 0 38px;
 }
 
-.btn-block {
-  height: 35px;
-}
-
-.form-row {
-  margin-bottom: 1rem;
-}
-
-.form-alert {
-  color: #842029;
-  letter-spacing: 1px;
-  text-transform: capitalize;
-}
-
+/* --------------------------------------------- */
 .focus-input100 {
   position: absolute;
   display: block;
-  top: 16px;
+  width: 100%;
+  height: 100%;
+  top: 0;
   left: 0;
   pointer-events: none;
 }
 
+.focus-input100 .input-icon {
+  position: absolute;
+  top: 9px;
+  left: 7px;
+  transition: all 0.4s;
+  font-size: 1.4rem;
+}
+
 .focus-input100::before {
+  content: '';
   display: block;
   position: absolute;
   bottom: -2px;
@@ -185,32 +189,26 @@
 .focus-input100::after {
   font-size: 22px;
   color: #fff;
-  content: attr(data-placeholder);
   display: block;
   width: 100%;
   position: absolute;
-  top: 10px;
+  top: 6px;
   left: 0;
-  padding-left: 100px;
+  padding-left: 5px;
   -webkit-transition: all 0.4s;
   -o-transition: all 0.4s;
   -moz-transition: all 0.4s;
   transition: all 0.4s;
 }
 
-.form-input:focus {
-  padding-left: 1.2rem;
-  top: 1rem;
-  outline: none;
+.input100:focus {
+  padding-left: 5px;
 }
 
-.form-input:focus + .focus-input100::after {
-  top: -22px;
+.input100:focus + .focus-input100::after,
+.input100:focus + .focus-input100 .input-icon {
+  top: -20px;
   font-size: 18px;
-}
-
-.form-input:focus + .focus-input100::before {
-  width: 100%;
 }
 
 .login100-form-btn {
@@ -262,4 +260,68 @@
 
 .login100-form-btn:hover::before {
   opacity: 0;
+}
+
+@media screen and (max-width: 600px) {
+  .bg-img {
+    display: block;
+    height: 100vh;
+  }
+
+  .form {
+    margin: 5% auto;
+    width: 80%;
+    font-size: 0.8rem;
+  }
+
+  .motor-logo {
+    width: 50%;
+  }
+
+  .logo {
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 1.38rem;
+  }
+
+  .form-title {
+    text-align: center;
+    font-family: Poppins-Bold, sans-serif;
+    font-size: 2rem;
+    color: #fff;
+  }
+
+  .member {
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: left;
+    gap: 1%;
+    color: white;
+
+    /* height: 100vh; */
+  }
+
+  .logo1 {
+    width: 80%;
+    margin: 2% auto;
+  }
+
+  .register-button {
+    width: 50%;
+  }
+
+  .member-text {
+    margin-left: 20%;
+    width: 60%;
+    text-align: center;
+    font-size: 1.5rem;
+  }
+}
+
+@media screen and (min-width: 1180px) {
+  .bg-img {
+    padding: 3vw;
+  }
 }

@@ -5,13 +5,9 @@ export default function Item({
 }) {
   return (
     <div>
-      <img alt={name} src={photo} />
-      <p>
-        {name}
-      </p>
-      <p>
-        {model}
-      </p>
+      <img alt={name} src={photo} className="single-motor-image" />
+      <p>{name}</p>
+      <p>{model}</p>
       <p>{description}</p>
       <div>
         <img alt="facebook" />

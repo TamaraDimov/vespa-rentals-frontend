@@ -1,0 +1,115 @@
+/* Delete motorcycle page styles
+
+/* Page container */
+.delete-motorcycle-bg {
+  background-color: #e35e0a;
+  background-image: url('../../assets/Delete_bg.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container for motorcycle list */
+.delete-motorcycle-container {
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 50px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  max-width: 650px;
+  width: 100%;
+}
+
+/* Heading */
+h1 {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Message */
+p {
+  font-size: 1.2rem;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+/* Motorcycle list */
+.delete-motorcycle-list-all {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  list-style: none;
+  text-align: center;
+}
+
+/* Motorcycle item */
+
+.delete-motorcycle-list {
+  display: flex;
+  align-self: center;
+  justify-content: center;
+  width: 100%;
+  padding: 3% 2%;
+}
+
+.delete-motorcycle-list li img {
+  width: 100%;
+  height: 40vh;
+  border-radius: 10px;
+  border: 4px solid #e35e0a;
+  box-shadow: 0 0 5px #ddb49b, 0 0 10px #ec8849, 0 0 20px #e35e0a, 0 0 40px;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow:
+      0 0 2px #d89b74,
+      0 0 8px #f47e35,
+      0 0 10px #e35e0a,
+      0 0 20px #e35e0a;
+  }
+
+  to {
+    box-shadow:
+      0 0 5px #e35e0a,
+      0 0 10px #e35e0a,
+      0 0 15px #e35e0a,
+      0 0 20px #e35e0a;
+  }
+}
+
+.delete-motorcycle-list li h2 {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.delete-motorcycle-list li p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.del-btn-danger {
+  background-color: #fff;
+  color: #e35e0a;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+  bottom: 20px;
+  left: 50%;
+}
+
+.del-btn-danger:hover {
+  background-color: #e3200a;
+  color: #fff;
+}
