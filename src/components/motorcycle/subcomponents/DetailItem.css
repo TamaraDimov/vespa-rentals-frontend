@@ -42,7 +42,7 @@
 }
 
 .detail-motor-name {
-  font-size: 5vw;
+  font-size: 5vw; /* Responsive font size */
   width: 100%;
   border: 3px solid white;
   border-radius: 20px;
@@ -52,7 +52,7 @@
 }
 
 .detail-motor-model {
-  font-size: 1.6rem;
+  font-size: 1.6rem; /* Responsive font size */
   font-weight: 600;
   margin-bottom: 10px;
   background-color: white;
@@ -60,7 +60,7 @@
 }
 
 .detail-motor-desc {
-  font-size: 2rem;
+  font-size: 2rem; /* Responsive font size */
   margin-top: 15%;
   background-color: black;
 }
@@ -71,22 +71,22 @@
 }
 
 .social-icons img {
-  width: 24px;
-  height: 24px;
-  margin: 0 5px;
+  width: 2.4vw; /* Responsive image size */
+  height: 2.4vw; /* Responsive image size */
+  margin: 0 0.5vw; /* Responsive margin */
 }
 
 .nice-button {
   font-family: 'Playgram', sans-serif;
-  font-size: 1.2rem;
+  font-size: 1.2rem; /* Responsive font size */
   position: relative;
   display: inline-block;
-  padding: 25px 30px;
-  margin: 40px 0;
+  padding: 2.5vw 3vw; /* Responsive padding */
+  margin: 4vw 0; /* Responsive margin */
   color: rgb(255, 112, 23);
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: 4px;
+  letter-spacing: 0.4vw; /* Responsive letter spacing */
   overflow: hidden;
 }
 
@@ -94,12 +94,14 @@
   color: #050801;
   background: rgb(255, 112, 23);
   box-shadow:
-    0 0 5px rgb(255, 112, 23),
-    0 0 25px rgb(255, 112, 23),
-    0 0 50px rgb(255, 112, 23),
-    0 0 200px rgb(255, 112, 23);
-  -webkit-box-reflect: below 1px linear-gradient(transparent, #0005);
+    0 0 0.5vw rgb(255, 112, 23),
+    0 0 2.5vw rgb(255, 112, 23),
+    0 0 5vw rgb(255, 112, 23),
+    0 0 20vw rgb(255, 112, 23);
+  -webkit-box-reflect: below 0.1vw linear-gradient(transparent, #0005);
 }
+
+/* Rest of the animation styles */
 
 .nice-button span {
   position: absolute;
@@ -186,5 +188,35 @@
   50%,
   100% {
     bottom: 100%;
+  }
+}
+
+/* Media query for smaller screen sizes */
+@media (max-width: 768px) {
+  .detail-motor-container {
+    flex-direction: column;
+    gap: 2%;
+  }
+
+  .detail-motor-image {
+    width: 100%;
+  }
+
+  .detail-motor-name {
+    font-size: 5vw;
+  }
+
+  .detail-motor-desc {
+    font-size: 3.5vw; /* Responsive font size */
+    margin-top: 6%;
+    background-color: black;
+  }
+
+  .details-page-title {
+    padding: 3%;
+    font-size: 6vw;
+    color: rgb(255, 112, 23);
+    font-family: 'Playgram', sans-serif;
+    background-color: black;
   }
 }

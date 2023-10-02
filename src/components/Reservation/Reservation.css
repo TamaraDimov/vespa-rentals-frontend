@@ -29,6 +29,11 @@
 }
 
 /* Table styles */
+.table-responsive {
+  overflow-x: auto;
+  max-width: 100%;
+}
+
 .reservation-table {
   border-collapse: collapse;
   width: 100%;
@@ -74,4 +79,23 @@
 .res-del-btn:hover {
   color: #f81900;
   font-size: 1.8rem;
+}
+
+/* Media Query for screens less than 768px */
+@media (max-width: 768px) {
+  .reservation-list {
+    margin-top: 5%;
+  }
+
+  .reservation-list-title {
+    font-size: 2rem;
+  }
+
+  .reservation-table {
+    font-size: 1rem;
+  }
+
+  .res-del-btn {
+    font-size: 1.5rem;
+  }
 }

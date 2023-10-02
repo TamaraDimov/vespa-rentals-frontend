@@ -36,36 +36,39 @@ const Reservations = () => {
           </>
         )}
         {!reservations.loading && !reservations.error && (
-          <table className="reservation-table">
-            <thead className="res-thead">
-              <tr className="res-tr">
-                <th className="res-th">Start Date</th>
-                <th className="res-th">End Date</th>
-                <th className="res-th">City</th>
-                <th className="res-th">Motorcycle</th>
-                <th className="res-th"> </th>
-              </tr>
-            </thead>
-            <tbody className="res-tbody">
-              {reservations.reservations
-              && reservations.reservations.map((reservation) => (
-                <tr key={reservation.id} className="res-tr">
-                  <td className="res-td">{reservation.start_date}</td>
-                  <td className="res-td">{reservation.end_date}</td>
-                  <td className="res-td">{reservation.city}</td>
-                  <td className="res-td">{reservation.motorcycle.name}</td>
-                  <td className="res-td">
-                    {reservations.status !== 'loading' && reservation.id && (
-                      <MdDelete
-                        className="res-del-btn"
-                        onClick={() => handleDeleteReservation(reservation.id)}
-                      />
-                    )}
-                  </td>
+          <div className="table-responsive">
+            <table className="reservation-table">
+              <thead className="res-thead">
+                <tr className="res-tr">
+                  <th className="res-th">Start Date</th>
+                  <th className="res-th">End Date</th>
+                  <th className="res-th">City</th>
+                  <th className="res-th">Motorcycle</th>
+                  <th className="res-th"> </th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
+              </thead>
+              <tbody className="res-tbody">
+                {reservations.reservations
+                  && reservations.reservations.map((reservation) => (
+                    <tr key={reservation.id} className="res-tr">
+                      <td className="res-td">{reservation.start_date}</td>
+                      <td className="res-td">{reservation.end_date}</td>
+                      <td className="res-td">{reservation.city}</td>
+                      <td className="res-td">{reservation.motorcycle.name}</td>
+                      <td className="res-td">
+                        {reservations.status !== 'loading'
+                          && reservation.id && (
+                            <MdDelete
+                              className="res-del-btn"
+                              onClick={() => handleDeleteReservation(reservation.id)}
+                            />
+                        )}
+                      </td>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+          </div>
         )}
       </div>
     </div>

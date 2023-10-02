@@ -122,3 +122,41 @@
   height: 30px;
   cursor: pointer;
 }
+
+@media (max-width: 768px) {
+  .moto-inner-container {
+    width: 70vw;
+  }
+
+  .latest-model-title {
+    font-size: 5vw;
+  }
+
+  .motorcycle-item {
+    width: 100%;
+  }
+
+  .single-motor-list {
+    width: 90%;
+  }
+
+  .single-motor-image {
+    width: 100%;
+  }
+
+  .single-motor-name {
+    font-size: 20px;
+  }
+
+  .single-motor-model {
+    font-size: 16px;
+  }
+
+  .single-motor-description {
+    font-size: 14px;
+  }
+
+  .single-motor-socials {
+    width: 80%;
+  }
+}
