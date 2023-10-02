@@ -1,24 +1,25 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import { FaFacebook, FaTwitter, FaGoogle } from 'react-icons/fa';
+import '../Motorcycle.css';
 
 export default function Item(props) {
   const {
     name, description, photo, model, id,
   } = props;
+
   return (
-    <div>
-      <Link to={id}><img alt={name} src={photo} /></Link>
-      <p>
-        {name}
-      </p>
-      <p>
-        {model}
-      </p>
-      <p>{description}</p>
-      <div>
-        <img alt="facebook" />
-        <img alt="instagram" />
-        <img alt="facebook" />
+    <div className="single-motor-list">
+      <Link to={id}>
+        <img alt={name} src={photo} />
+      </Link>
+      <p className="single-motor-name">{name}</p>
+      <p className="single-motor-model">{model}</p>
+      <p className="single-motor-description">{description}</p>
+      <div className="single-motor-socials">
+        <FaTwitter />
+        <FaFacebook />
+        <FaGoogle />
       </div>
     </div>
   );

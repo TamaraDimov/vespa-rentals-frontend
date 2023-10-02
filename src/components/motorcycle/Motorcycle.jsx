@@ -3,6 +3,7 @@ import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { fetchMotorcycle, fetchUser } from '../../redux/reducers/motorcycleSlice';
 import Item from './subcomponents/MotorcycleItem';
+import './Motorcycle.css';
 
 export default function Motorcycle() {
   const dispatch = useDispatch();
@@ -32,11 +33,12 @@ export default function Motorcycle() {
     ));
 
     return (
-      <div>
-        <h1>LATEST MODELS</h1>
-        <div>
-          {motorcycle.isLoading ? <Succes /> : 'Loading...'}
-
+      <div className="moto-main-container">
+        <div className="moto-inner-container">
+          <h1 className="latest-model-title">LATEST MODELS</h1>
+          <div className="latest-models-list">
+            {motorcycle.isLoading ? <Succes /> : 'Loading...'}
+          </div>
         </div>
       </div>
     );

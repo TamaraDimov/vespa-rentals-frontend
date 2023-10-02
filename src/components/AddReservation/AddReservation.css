@@ -2,7 +2,8 @@
   border: 0.5px solid #ffffff94;
   background: url(../../assets/Reserve\ bg.jpg);
   background-color: #e3a20a53;
-  background-blend-mode: color-burn;
+
+  /* background-blend-mode: color-burn; */
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;

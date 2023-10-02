@@ -1,0 +1,100 @@
+.moto-main-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto;
+  background: url(../../assets/home-bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: white;
+  height: 100vh;
+  position: relative;
+}
+
+.moto-inner-container {
+  background-color: rgba(0, 0, 0, 0.64);
+  border-radius: 50px;
+  padding: 5%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 1200px;
+}
+
+.latest-model-title {
+  font-size: 3vw;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.latest-models-list {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.motorcycle-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.motorcycle-item:hover {
+  transform: scale(1.1);
+}
+
+.single-motor-list {
+  width: 300px;
+  height: 50vh;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+  color: black;
+}
+
+.single-motor-image {
+  width: 400px;
+  height: 200px;
+  object-fit: cover;
+}
+
+.single-motor-name {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.single-motor-model {
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.single-motor-description {
+  font-size: 14px;
+  margin-top: 10px;
+}
+
+.single-motor-socials {
+  width: 60%;
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.single-motor-socials img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
