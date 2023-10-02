@@ -3,7 +3,7 @@ import { BrowserRouter as Router } from 'react-router-dom';
 import renderer from 'react-test-renderer';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
-import DeleteMotorcycle from '../components/motorcycle/DeleteMotorcycle';
+import Rating from '../components/Sidebar/Rating';
 import 'mock-local-storage';
 
 const mockStore = configureMockStore();
@@ -19,31 +19,13 @@ const testuser = {
   },
 };
 const store = mockStore({
-  motorcycle: {
-    motorcycle: [
-      {
-        id: 1,
-        name: 'Honda CBR600RR',
-        model: 'CBR600RR',
-        photo: 'https://example.com/photo1.jpg',
-        description: 'Description for Honda CBR600RR',
-      },
-      {
-        id: 2,
-        name: 'Yamaha YZF-R6',
-        model: 'YZF-R6',
-        photo: 'https://example.com/photo2.jpg',
-        description: 'Description for Yamaha YZF-R6',
-      },
-    ],
-  },
   user: {
     isLoading: false,
     user: testuser,
     token: testuser.token,
   },
 });
-describe('DeleteMotorcycle', () => {
+describe('Rating', () => {
   let mockLocalStorage;
   let originalLocalStorage;
 
@@ -84,13 +66,13 @@ describe('DeleteMotorcycle', () => {
     });
   });
 
-  let deleteMotorcycle;
+  let rating;
   beforeAll(async () => {
-    deleteMotorcycle = renderer
+    rating = renderer
       .create(
         <Provider store={store}>
           <Router>
-            <DeleteMotorcycle />
+            <Rating />
           </Router>
         </Provider>,
       )
@@ -102,10 +84,10 @@ describe('DeleteMotorcycle', () => {
   });
 
   it('should render correctly', () => {
-    expect(deleteMotorcycle).toBeTruthy();
+    expect(rating).toBeTruthy();
   });
 
   it('should match the snapshot', () => {
-    expect(deleteMotorcycle).toMatchSnapshot();
+    expect(rating).toMatchSnapshot();
   });
 });

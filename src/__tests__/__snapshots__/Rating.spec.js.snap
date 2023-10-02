@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Rating should match the snapshot 1`] = `
+<div
+  style={
+    Object {
+      "alignItems": "center",
+      "display": "flex",
+      "flexDirection": "column",
+    }
+  }
+>
+  <h2
+    className="default-heading"
+  >
+    ⭐ Rate App ⬇️
+  </h2>
+  <div
+    style={
+      Object {
+        "display": "flex",
+        "justifyContent": "center",
+      }
+    }
+  >
+    <button
+      className="star "
+      onClick={[Function]}
+      type="button"
+    >
+      ☆
+    </button>
+    <button
+      className="star "
+      onClick={[Function]}
+      type="button"
+    >
+      ☆
+    </button>
+    <button
+      className="star "
+      onClick={[Function]}
+      type="button"
+    >
+      ☆
+    </button>
+    <button
+      className="star "
+      onClick={[Function]}
+      type="button"
+    >
+      ☆
+    </button>
+    <button
+      className="star "
+      onClick={[Function]}
+      type="button"
+    >
+      ☆
+    </button>
+  </div>
+</div>
+`;

@@ -1,18 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { getUserFromLocalStorage } from '../../helpers/LocalStorage';
+import { useSelector } from 'react-redux';
 import './Rating.css';
 
 const StarRating = () => {
-  const userData = getUserFromLocalStorage();
+  const user = useSelector((state) => state.user.user);
   const [rating, setRating] = useState(() => {
-    const storedRating = localStorage.getItem(`starRating_${userData.user.data.id}`);
+    const storedRating = localStorage.getItem(
+      `starRating_${user && user.user.data ? user.user.data.id : ''}`
+    );
     return storedRating ? parseInt(storedRating, 10) : 0;
   });
 
   useEffect(() => {
-    localStorage.setItem(`starRating_${userData.user.data.id}`, rating.toString());
-  }, [rating, userData.user.data.id]);
+    localStorage.setItem(
+      `starRating_${user && user.user.data ? user.user.data.id : ''}`,
+      rating.toString()
+    );
+  }, [rating, user, user.user.data.id]);
 
   const handleRatingChange = (selectedRating) => {
     setRating(selectedRating);
@@ -32,6 +37,21 @@ const StarRating = () => {
       }, 3000);
     }
   }, [rating]);
+
+  const Star = ({ selected, onClick }) => (
+    <button
+      type="button"
+      className={`star ${selected ? 'selected' : ''}`}
+      onClick={onClick}
+    >
+      {selected ? '★' : '☆'}
+    </button>
+  );
+
+  Star.propTypes = {
+    selected: PropTypes.bool.isRequired,
+    onClick: PropTypes.func.isRequired,
+  };
 
   return (
     <div
@@ -53,21 +73,6 @@ const StarRating = () => {
       </div>
     </div>
   );
-};
-
-const Star = ({ selected, onClick }) => (
-  <button
-    type="button"
-    className={`star ${selected ? 'selected' : ''}`}
-    onClick={onClick}
-  >
-    {selected ? '★' : '☆'}
-  </button>
-);
-
-Star.propTypes = {
-  selected: PropTypes.bool.isRequired,
-  onClick: PropTypes.func.isRequired,
 };
 
 export default StarRating;
