@@ -1,14 +1,22 @@
 import { useLoaderData } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { fetchSpecificMotorcycle, fetchUser } from '../../redux/reducers/motorcycleSlice';
+import {
+  fetchSpecificMotorcycle,
+  fetchUser,
+} from '../../redux/reducers/motorcycleSlice';
 import Item from './subcomponents/DetailItem';
+import './subcomponents/DetailItem.css';
 
 export default function Detail() {
   const motorcycleId = useLoaderData();
   const dispatch = useDispatch();
-  const motorcycle = useSelector((state) => state.motorcycle.specificMotorcycle.motorcycle);
-  const isLoading = useSelector((state) => state.motorcycle.specificMotorcycle.isLoading);
+  const motorcycle = useSelector(
+    (state) => state.motorcycle.specificMotorcycle.motorcycle,
+  );
+  const isLoading = useSelector(
+    (state) => state.motorcycle.specificMotorcycle.isLoading,
+  );
   const isMotorcycle = useSelector((state) => state.motorcycle);
   const { user } = useSelector((state) => state.user);
   const { token } = user.user;
@@ -30,8 +38,8 @@ export default function Detail() {
     );
 
     return (
-      <div>
-        <h1>Detail motorcycle page</h1>
+      <div className="details-page-container">
+        <h1 className="details-page-title">Detail motorcycle page</h1>
         {isLoading ? <Succes /> : 'Loading...'}
       </div>
     );
