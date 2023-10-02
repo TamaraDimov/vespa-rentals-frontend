@@ -1,28 +1,23 @@
+@import url('https://fonts.cdnfonts.com/css/dyson-modern');
+
 .moto-main-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin: 0 auto;
   background: url(../../assets/home-bg.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   color: white;
   height: 100vh;
-  position: relative;
+  display: flex;
+  width: 100%;
 }
 
 .moto-inner-container {
+  margin: 4% auto;
   background-color: rgba(0, 0, 0, 0.64);
   border-radius: 50px;
-  padding: 5%;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  max-width: 1200px;
+  width: 75vw;
+  padding: 2% 4%;
+  border: 2px solid white;
 }
 
 .latest-model-title {
@@ -34,8 +29,7 @@
 
 .latest-models-list {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  justify-content: space-between;
 }
 
 .motorcycle-item {
@@ -56,41 +50,68 @@
 
 .single-motor-list {
   width: 300px;
-  height: 50vh;
   background-color: #fff;
-  border: 1px solid #ccc;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  margin: 20px;
+  border-radius: 2rem;
   color: black;
+  border: 4px solid #e35e0a;
+  box-shadow: 0 0 5px #ddb49b, 0 0 10px #ec8849, 0 0 20px #e35e0a, 0 0 40px;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow:
+      0 0 2px #d89b74,
+      0 0 8px #f47e35,
+      0 0 10px #e35e0a,
+      0 0 20px #e35e0a;
+  }
+
+  to {
+    box-shadow:
+      0 0 5px #e35e0a,
+      0 0 10px #e35e0a,
+      0 0 15px #e35e0a,
+      0 0 20px #e35e0a;
+  }
 }
 
 .single-motor-image {
   width: 400px;
-  height: 200px;
-  object-fit: cover;
+  object-fit: scale-down;
 }
 
 .single-motor-name {
   font-size: 24px;
   font-weight: bold;
-  margin-top: 20px;
+  padding: 4%;
+  background-color: black;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  color: white;
+  margin-bottom: 0;
 }
 
 .single-motor-model {
-  font-size: 16px;
-  margin-top: 10px;
+  font-size: 20px;
+  font-family: 'Dyson Sans Modern', sans-serif;
+  color: #f7f7f7;
+  font-weight: bold;
+  padding: 4%;
+  background-color: black;
 }
 
 .single-motor-description {
-  font-size: 14px;
-  margin-top: 10px;
+  font-size: 1vw;
+  font-weight: 600;
+  margin: 2%;
 }
 
 .single-motor-socials {
   width: 60%;
   display: flex;
   justify-content: space-around;
-  margin-top: 20px;
+  margin: 20px auto;
 }
 
 .single-motor-socials img {

@@ -10,10 +10,10 @@ export default function Item(props) {
 
   return (
     <div className="single-motor-list">
+      <p className="single-motor-name">{name}</p>
       <Link to={id}>
         <img alt={name} src={photo} />
       </Link>
-      <p className="single-motor-name">{name}</p>
       <p className="single-motor-model">{model}</p>
       <p className="single-motor-description">{description}</p>
       <div className="single-motor-socials">
