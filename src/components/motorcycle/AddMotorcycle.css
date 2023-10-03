@@ -2,7 +2,6 @@
 
 :root {
   --color-red: #ec1840;
-
   /* --color-purple: #7a18ec; */
   --color-orange: #fa5300;
   --color-white: #fff;
@@ -18,13 +17,12 @@
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
-  width: 100%;
   height: 100vh;
   color: white;
 }
 
 .add-motorcycle-container {
-  padding: 5%;
+  padding: 4%;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -32,27 +30,27 @@
 
 .form-title2 {
   margin-top: 2%;
-  width: 100%;
+  width: 80%;
   border-radius: 2rem;
   text-align: center;
   font-family: Poppins-Bold, sans-serif;
-  font-size: 2.5rem;
+  font-size: calc(1rem + 2vw);
   color: #fff;
   background-color: rgba(0, 0, 0, 0.533);
   padding: 3%;
 }
 
 .form-2 {
-  font-size: 1.2rem;
+  font-size: calc( 0.5rem + 1vw);
+  margin-top: 2%;
   width: 60vw;
   max-width: 600px;
-  min-height: 50vh;
+  max-height: 640px;
   border: 4px solid #f07900;
   background: rgba(0, 0, 0, 0.509);
   border-radius: 2rem;
   box-shadow: 0 4px 6px -1px #9854001a, 0 2px 4px -1px #0000000f;
-  padding: 2.5rem 3rem;
-  margin: 5% auto;
+  padding: 3vw 4vw;
   transition: 0.3s ease-in-out all;
   color: white;
   display: flex;
@@ -75,7 +73,7 @@ input {
   width: 100%;
   position: relative;
   border-bottom: 2px solid rgba(255, 255, 255, 0.24);
-  margin-bottom: 30px;
+  margin-bottom: 3vw;
 }
 
 .input1002 {
@@ -84,7 +82,7 @@ input {
   line-height: 1.2;
   display: block;
   width: 100%;
-  height: 45px;
+  height: calc(3vw + 2vh);
   background: transparent;
   padding: 0 5px 0 38px;
 }
@@ -102,6 +100,8 @@ input {
   top: 0;
   left: 0;
   pointer-events: none;
+  text-align: center;
+  font-size: 1.2rem;
 }
 
 .focus-input1002 .input-icon2 {
@@ -109,7 +109,7 @@ input {
   top: 9px;
   left: 7px;
   transition: all 0.4s;
-  font-size: 1.4rem;
+  font-size: (50vw + 3vh);
 }
 
 .focus-input1002::before {
@@ -155,7 +155,7 @@ input {
 .custom-textarea {
   width: 100%;
   height: 15vh;
-  padding: 10px;
+  padding: 1.2vw;
   border: 2px solid #ccc;
   background-color: rgba(0, 0, 0, 0.181);
   border-radius: 5px;
@@ -175,22 +175,23 @@ textarea::placeholder {
 
 .d3button-container {
   display: flex;
-  width: 100%;
-  margin-top: 5%;
+  align-items: center;
+  justify-content: center;
+  margin: 3% 1%;
+  font-size: calc(0.5rem + 2vw);
 }
 
 .span-3dbutton {
   position: relative;
   display: inline-flex;
-  width: 180px;
-  height: 55px;
+  width: 18vw;
+  height: 8vh;
   margin: 0 auto;
   perspective: 1000px;
   align-self: center;
 }
 
 .span-3dbutton button {
-  font-size: 19px;
   letter-spacing: 1px;
   transform-style: preserve-3d;
   transform: translateZ(-25px);
@@ -203,8 +204,8 @@ textarea::placeholder {
 .span-3dbutton button::after {
   position: absolute;
   content: 'Submit';
-  height: 55px;
-  width: 180px;
+  height: calc(1.4rem + 3vw);
+  width: 20vw;
   display: flex;
   align-items: center;
   justify-content: center;
