@@ -268,11 +268,10 @@ Install the project dependencies with:
   rails db:migrate
 ```
 
-- And Make sure to delete Master key and credentials.yml.enc
-
-- Here are the steps to Edit Open your terminal or command prompt.
-
--> Navigate to the root directory of your Ruby on Rails application.
+- And Make sure to delete the Master key and credentials.yml.enc
+- Here are the steps needed to create your own Credentials.
+- Edit Open your terminal or command prompt.
+- Navigate to the root directory of your Ruby on Rails application.
 
 Run the following command:
    
