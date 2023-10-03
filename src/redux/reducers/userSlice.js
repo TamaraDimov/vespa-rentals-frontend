@@ -2,6 +2,7 @@ import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import customFetch from '../../helpers/axios';
+import { API_URL_SHORT } from '../../app/API_URL';
 import {
   addUserToLocalStorage,
   getUserFromLocalStorage,
@@ -18,7 +19,7 @@ const registerUser = createAsyncThunk(
   'user/registerUser',
   async ({ email, username, password }) => {
     try {
-      const resp = await customFetch.post('https://vespa.onrender.com/signup', {
+      const resp = await customFetch.post(`${API_URL_SHORT}/signup`, {
         user: {
           email,
           username,
@@ -36,7 +37,7 @@ const loginUser = createAsyncThunk(
   'user/loginUser',
   async ({ email, username, password }) => {
     try {
-      const resp = await customFetch.post('https://vespa.onrender.com/login', {
+      const resp = await customFetch.post(`${API_URL_SHORT}/login`, {
         user: {
           email,
           username,

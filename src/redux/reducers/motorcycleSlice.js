@@ -1,35 +1,19 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import { getUserFromLocalStorage } from '../../helpers/LocalStorage';
-import API_URL from '../../app/API_URL';
+import { API_URL, API_URL_SHORT } from '../../app/API_URL';
 
 const data = getUserFromLocalStorage();
 
-export const fetchMotorcycle = createAsyncThunk('get/ferchMortcycle', async (token) => {
-  try {
-    const motorcycleData = await fetch('https://vespa.onrender.com/api/v1/motorcycles', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    const dataJson = motorcycleData.json();
-    return dataJson;
-  } catch (error) {
-    return error;
-  }
-});
-
-export const fetchUser = createAsyncThunk(
-  'get/fetchUser',
+export const fetchMotorcycle = createAsyncThunk(
+  'get/ferchMortcycle',
   async (token) => {
     try {
-      const motorcycleData = await fetch(
-        'http://localhost:4000/current_user', {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+      const motorcycleData = await fetch(`${API_URL}/motorcycles`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
         },
-      );
-      const dataJson = motorcycleData.status;
+      });
+      const dataJson = motorcycleData.json();
       return dataJson;
     } catch (error) {
       return error;
@@ -37,17 +21,29 @@ export const fetchUser = createAsyncThunk(
   },
 );
 
+export const fetchUser = createAsyncThunk('get/fetchUser', async (token) => {
+  try {
+    const motorcycleData = await fetch(`${API_URL_SHORT}/current_user`, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    });
+    const dataJson = motorcycleData.status;
+    return dataJson;
+  } catch (error) {
+    return error;
+  }
+});
+
 export const fetchSpecificMotorcycle = createAsyncThunk(
   'get/fetchSpecificMotorcycle',
   async (id) => {
     try {
-      const motorcycleData = await fetch(
-        `https://vespa.onrender.com/api/v1/motorcycles/${id}`, {
-          headers: {
-            Authorization: `Bearer ${data.user.token}`,
-          },
+      const motorcycleData = await fetch(`${API_URL}/motorcycles/${id}`, {
+        headers: {
+          Authorization: `Bearer ${data.user.token}`,
         },
-      );
+      });
       const dataJson = motorcycleData.json();
       return dataJson;
     } catch (error) {
@@ -58,17 +54,16 @@ export const fetchSpecificMotorcycle = createAsyncThunk(
 
 export const deleteMotorcycle = createAsyncThunk(
   'motorcycle/deleteMotorcycle',
-  async (id) => {
+  async (motorcycleId) => {
     try {
-      const response = await fetch(`${API_URL}/motorcycles/${id}`, {
+      await fetch(`${API_URL}/motorcycles/${motorcycleId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${data.user.token}`,
         },
       });
-      const dataJson = await response.json();
-      return dataJson;
+      return { id: motorcycleId };
     } catch (error) {
       return error;
     }
@@ -79,16 +74,14 @@ export const adddMotorcycle = createAsyncThunk(
   'get/adddMotorcycle',
   async (params) => {
     try {
-      const motorcycleData = await fetch(
-        'https://vespa.onrender.com/api/v1/motorcycles', {
-          method: 'POST',
-          headers: {
-            Authorization: `Bearer ${data.user.token}`,
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(params),
+      const motorcycleData = await fetch(`${API_URL}/motorcycles`, {
+        method: 'POST',
+        headers: {
+          Authorization: `Bearer ${data.user.token}`,
+          'Content-Type': 'application/json',
         },
-      );
+        body: JSON.stringify(params),
+      });
       const dataJson = motorcycleData.status;
       return dataJson;
     } catch (error) {
@@ -166,7 +159,12 @@ const motorcycleSlice = createSlice({
 
       .addCase(deleteMotorcycle.fulfilled, (state, action) => {
         state.status = 'success';
-        state.motorcycle.push(action.payload);
+        if (action.payload && action.payload.id) {
+          const deletedMotorcycleId = action.payload.id;
+          state.motorcycle = state.motorcycle.filter(
+            (motorcycle) => motorcycle.id !== deletedMotorcycleId,
+          );
+        }
       })
 
       .addCase(deleteMotorcycle.rejected, (state, action) => {
