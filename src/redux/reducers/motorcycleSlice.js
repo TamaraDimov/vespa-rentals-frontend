@@ -6,7 +6,7 @@ const data = getUserFromLocalStorage();
 
 export const fetchMotorcycle = createAsyncThunk('get/ferchMortcycle', async (token) => {
   try {
-    const motorcycleData = await fetch('http://localhost:4000/api/v1/motorcycles', {
+    const motorcycleData = await fetch('https://vespa.onrender.com/api/v1/motorcycles', {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -42,7 +42,7 @@ export const fetchSpecificMotorcycle = createAsyncThunk(
   async (id) => {
     try {
       const motorcycleData = await fetch(
-        `http://localhost:4000/api/v1/motorcycles/${id}`, {
+        `https://vespa.onrender.com/api/v1/motorcycles/${id}`, {
           headers: {
             Authorization: `Bearer ${data.user.token}`,
           },
@@ -80,7 +80,7 @@ export const adddMotorcycle = createAsyncThunk(
   async (params) => {
     try {
       const motorcycleData = await fetch(
-        'http://localhost:4000/api/v1/motorcycles', {
+        'https://vespa.onrender.com/api/v1/motorcycles', {
           method: 'POST',
           headers: {
             Authorization: `Bearer ${data.user.token}`,

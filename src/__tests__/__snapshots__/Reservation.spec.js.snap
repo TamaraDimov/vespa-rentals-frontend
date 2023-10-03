@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Reservation should match the snapshot 1`] = `
+<div
+  className="reservation-list-container"
+>
+  <div
+    className="reservation-list"
+  >
+    <h1
+      className="reservation-list-title"
+    >
+      Reservations
+    </h1>
+    <table
+      className="reservation-table"
+    >
+      <thead
+        className="res-thead"
+      >
+        <tr
+          className="res-tr"
+        >
+          <th
+            className="res-th"
+          >
+            Start Date
+          </th>
+          <th
+            className="res-th"
+          >
+            End Date
+          </th>
+          <th
+            className="res-th"
+          >
+            City
+          </th>
+          <th
+            className="res-th"
+          >
+            Motorcycle
+          </th>
+          <th
+            className="res-th"
+          >
+             
+          </th>
+        </tr>
+      </thead>
+      <tbody
+        className="res-tbody"
+      />
+    </table>
+  </div>
+</div>
+`;

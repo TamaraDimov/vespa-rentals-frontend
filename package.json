@@ -2,6 +2,14 @@
   "name": "vespa-rentals-frontend",
   "version": "0.1.0",
   "private": true,
+  "jest": {
+    "moduleNameMapper": {
+      "axios": "axios/dist/axios"
+    },
+    "transformIgnorePatterns": [
+      "/node_modules/(?!module-to-transform)/"
+    ]
+  },
   "dependencies": {
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
@@ -32,6 +40,7 @@
     "react-test-renderer": "^18.2.0",
     "react-toastify": "^9.1.3",
     "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.4",
     "swiper": "^10.3.1",
     "web-vitals": "^2.1.4"
   },
@@ -73,6 +82,7 @@
     "eslint-plugin-jsx-a11y": "^6.7.1",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "mock-local-storage": "^1.1.24",
     "postcss": "^8.4.30",
     "stylelint": "^13.13.1",
     "stylelint-config-standard": "^21.0.0",

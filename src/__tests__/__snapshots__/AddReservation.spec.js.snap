@@ -1,0 +1,120 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddReservation should match the snapshot 1`] = `
+<div
+  className="reservation-container"
+>
+  <form
+    className="reservation-form"
+    onSubmit={[Function]}
+  >
+    <label
+      className="form-label"
+      htmlFor="start_date"
+    >
+      Start Date:
+      <input
+        className="form-input"
+        id="start_date"
+        name="start_date"
+        onChange={[Function]}
+        type="date"
+        value=""
+      />
+    </label>
+    <label
+      className="form-label"
+      htmlFor="end_date"
+    >
+      End Date:
+      <input
+        className="form-input"
+        id="end_date"
+        name="end_date"
+        onChange={[Function]}
+        type="date"
+        value=""
+      />
+    </label>
+    <label
+      className="form-label"
+      htmlFor="city"
+    >
+      City:
+      <select
+        className="form-select"
+        id="city"
+        name="city"
+        onChange={[Function]}
+        value=""
+      >
+        <option
+          value=""
+        >
+          Select a city
+        </option>
+        <option
+          value="New York"
+        >
+          New York
+        </option>
+        <option
+          value="Los Angeles"
+        >
+          Los Angeles
+        </option>
+        <option
+          value="Chicago"
+        >
+          Chicago
+        </option>
+        <option
+          value="Houston"
+        >
+          Houston
+        </option>
+        <option
+          value="Philadelphia"
+        >
+          Philadelphia
+        </option>
+      </select>
+    </label>
+    <label
+      className="form-label"
+      htmlFor="motorcycle_id"
+    >
+      Motorcycle:
+      <select
+        className="form-select"
+        id="motorcycle_id"
+        name="motorcycle_id"
+        onChange={[Function]}
+        value=""
+      >
+        <option
+          value=""
+        >
+          Select a motorcycle
+        </option>
+        <option
+          value={1}
+        >
+          Honda CBR600RR
+        </option>
+        <option
+          value={2}
+        >
+          Yamaha YZF-R6
+        </option>
+      </select>
+    </label>
+    <button
+      disabled={false}
+      type="submit"
+    >
+      Add Reservation
+    </button>
+  </form>
+</div>
+`;
