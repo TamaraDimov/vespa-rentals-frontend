@@ -132,7 +132,7 @@ _**Reservations:**_
 
 ## 🚀 Live Demo
 
-To see this project's live demo, please click [here](https://rent-motorcycles.onrender.com)]().
+To see this project's live demo, please [click here](https://rent-motorcycles.onrender.com)]().
 
 ## 🧾 Database Structure: <a name="erd"></a>
 
