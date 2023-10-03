@@ -27,7 +27,7 @@ export const fetchMotorcycle = createAsyncThunk(
 export const fetchUser = createAsyncThunk('get/fetchUser', async (token) => {
   try {
     const motorcycleData = await fetch(
-      'https://vespa.onrender.com/api/v1/current_user',
+      'https://vespa.onrender.com/current_user',
       {
         headers: {
           Authorization: `Bearer ${token}`,
