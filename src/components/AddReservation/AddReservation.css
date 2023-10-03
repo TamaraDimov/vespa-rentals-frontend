@@ -111,14 +111,14 @@
   }
 
   .form-select#motorcycle_id {
-    width: 30%;
+    width: 50%;
   }
 }
 
 /* Other styles */
 
 .form-input {
-  padding: 0.5rem;
+  padding: calc(0.3rem + 1vw);
   font-size: 1rem;
 }
 

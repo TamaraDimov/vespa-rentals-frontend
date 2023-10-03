@@ -69,12 +69,18 @@
 
 @keyframes glow {
   from {
-    box-shadow: 0 0 2px #d89b74, 0 0 8px #f47e35, 0 0 10px #e35e0a,
+    box-shadow:
+      0 0 2px #d89b74,
+      0 0 8px #f47e35,
+      0 0 10px #e35e0a,
       0 0 20px #e35e0a;
   }
 
   to {
-    box-shadow: 0 0 5px #e35e0a, 0 0 10px #e35e0a, 0 0 15px #e35e0a,
+    box-shadow:
+      0 0 5px #e35e0a,
+      0 0 10px #e35e0a,
+      0 0 15px #e35e0a,
       0 0 20px #e35e0a;
   }
 }

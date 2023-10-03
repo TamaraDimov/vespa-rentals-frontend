@@ -5,6 +5,7 @@
   backface-visibility: visible;
   height: 100vh;
   color: white;
+  text-align: center;
 }
 
 .details-page-title {
@@ -42,9 +43,9 @@
 }
 
 .detail-motor-name {
-  font-size: 5vw; /* Responsive font size */
+  font-size: 4vw; /* Responsive font size */
+  padding: 2%;
   width: 100%;
-  border: 3px solid white;
   border-radius: 20px;
   font-weight: bold;
   margin-bottom: 10px;
@@ -199,7 +200,8 @@
   }
 
   .detail-motor-image {
-    width: 100%;
+    width: 90%;
+    margin: 0 auto;
   }
 
   .detail-motor-name {

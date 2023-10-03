@@ -4,32 +4,19 @@ import API_URL from '../../app/API_URL';
 
 const data = getUserFromLocalStorage();
 
-export const fetchMotorcycle = createAsyncThunk('get/ferchMortcycle', async (token) => {
-  try {
-    const motorcycleData = await fetch('https://vespa.onrender.com/api/v1/motorcycles', {
-      headers: {
-        Authorization: `Bearer ${token}`,
-      },
-    });
-    const dataJson = motorcycleData.json();
-    return dataJson;
-  } catch (error) {
-    return error;
-  }
-});
-
-export const fetchUser = createAsyncThunk(
-  'get/fetchUser',
+export const fetchMotorcycle = createAsyncThunk(
+  'get/ferchMortcycle',
   async (token) => {
     try {
       const motorcycleData = await fetch(
-        'http://localhost:4000/current_user', {
+        'https://vespa.onrender.com/api/v1/motorcycles',
+        {
           headers: {
             Authorization: `Bearer ${token}`,
           },
         },
       );
-      const dataJson = motorcycleData.status;
+      const dataJson = motorcycleData.json();
       return dataJson;
     } catch (error) {
       return error;
@@ -37,12 +24,30 @@ export const fetchUser = createAsyncThunk(
   },
 );
 
+export const fetchUser = createAsyncThunk('get/fetchUser', async (token) => {
+  try {
+    const motorcycleData = await fetch(
+      'https://vespa.onrender.com/current_user',
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+    );
+    const dataJson = motorcycleData.status;
+    return dataJson;
+  } catch (error) {
+    return error;
+  }
+});
+
 export const fetchSpecificMotorcycle = createAsyncThunk(
   'get/fetchSpecificMotorcycle',
   async (id) => {
     try {
       const motorcycleData = await fetch(
-        `https://vespa.onrender.com/api/v1/motorcycles/${id}`, {
+        `https://vespa.onrender.com/api/v1/motorcycles/${id}`,
+        {
           headers: {
             Authorization: `Bearer ${data.user.token}`,
           },
@@ -80,7 +85,8 @@ export const adddMotorcycle = createAsyncThunk(
   async (params) => {
     try {
       const motorcycleData = await fetch(
-        'https://vespa.onrender.com/api/v1/motorcycles', {
+        'https://vespa.onrender.com/api/v1/motorcycles',
+        {
           method: 'POST',
           headers: {
             Authorization: `Bearer ${data.user.token}`,

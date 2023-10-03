@@ -18,6 +18,7 @@
   width: 75vw;
   padding: 2% 4%;
   border: 2px solid white;
+  text-align: center;
 }
 
 .latest-model-title {
@@ -25,6 +26,7 @@
   font-weight: bold;
   margin-top: 20px;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 .latest-models-list {
