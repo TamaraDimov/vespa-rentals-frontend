@@ -132,7 +132,7 @@ _**Reservations:**_
 
 ## 🚀 Live Demo
 
-To see this project's live demo, please [click here](https://rent-motorcycles.onrender.com)]().
+To see this project's live demo, please (click here)[https://rent-motorcycles.onrender.com].
 
 ## 🧾 Database Structure: <a name="erd"></a>
 
@@ -211,7 +211,7 @@ _In order to run this project you need:_
 
 ### Install
 
-Install thr project dependencies with:
+Install the project dependencies with:
 
 ```
   npm install
@@ -260,12 +260,24 @@ You can deploy this project using:
 
 ### Install
 
-Install thr project dependencies with:
+Install the project dependencies with:
 
 ```
   bundle install
   rails db:create
   rails db:migrate
+```
+
+- And Make sure to delete Master key and credentials.yml.enc
+
+- Here are the steps to Edit Open your terminal or command prompt.
+
+-> Navigate to the root directory of your Ruby on Rails application.
+
+Run the following command:
+   
+```
+rails credentials:edit command: 
 ```
 
 ### Usage<a name="usage"></a>
