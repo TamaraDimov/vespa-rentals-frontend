@@ -2,6 +2,7 @@
 
 :root {
   --color-red: #ec1840;
+
   /* --color-purple: #7a18ec; */
   --color-orange: #fa5300;
   --color-white: #fff;
@@ -41,7 +42,7 @@
 }
 
 .form-2 {
-  font-size: calc( 0.5rem + 1vw);
+  font-size: calc(0.5rem + 1vw);
   margin-top: 2%;
   width: 60vw;
   max-width: 600px;
@@ -84,7 +85,7 @@ input {
   width: 100%;
   height: calc(3vw + 2vh);
   background: transparent;
-  padding: 0 5px 0 38px;
+  padding: 0 5vw 0 5vw;
 }
 
 .input1002::placeholder {
@@ -109,7 +110,7 @@ input {
   top: 9px;
   left: 7px;
   transition: all 0.4s;
-  font-size: (50vw + 3vh);
+  font-size: calc(2vw + 0.5rem);
 }
 
 .focus-input1002::before {
@@ -128,7 +129,6 @@ input {
 }
 
 .focus-input1002::after {
-  font-size: 22px;
   color: #fff;
   display: block;
   width: 100%;
@@ -149,7 +149,7 @@ input {
 .input1002:focus + .focus-input1002::after,
 .input1002:focus + .focus-input1002 .input-icon2 {
   top: -20px;
-  font-size: 18px;
+  font-size: calc(2vw + 0.3rem);
 }
 
 .custom-textarea {
@@ -229,5 +229,30 @@ textarea::placeholder {
 }
 
 @media only screen and (max-width: 768px) {
+
+  .input1002 {
+  font-family: Poppins-Regular, sans-serif;
+  color: #fff;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  height: calc(3vw + 2vh);
+  background: transparent;
+  padding: 0 6vw 0 8vw;
+}
+
+.focus-input1002 .input-icon2 {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  transition: all 0.4s;
+  font-size: calc(2vw + 0.5rem);
+}
+
+  .input1002:focus + .focus-input1002::after,
+.input1002:focus + .focus-input1002 .input-icon2 {
+  top: -20px;
+  font-size: calc(2vw + 0.3rem);
+}
   /* For later Usage */
 }

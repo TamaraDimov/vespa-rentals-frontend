@@ -9,31 +9,33 @@
   height: 100vh;
   display: flex;
   justify-content: center;
-  align-items: center;
+  padding: 2%;
 }
 
 /* Container for motorcycle list */
 .delete-motorcycle-container {
   background-color: rgba(255, 255, 255, 0.9);
-  padding: 50px;
+  padding: calc(1rem + 2vw);
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   max-width: 650px;
+  max-height: 900px;
   width: 100%;
 }
 
 /* Heading */
-h1 {
-  font-size: 2.5rem;
+.delete-motorcycle-container h1 {
+  font-size: calc(0.8rem + 2vw);
   font-weight: bold;
-  margin-bottom: 30px;
+  margin-bottom: 2vw;
   text-align: center;
 }
 
 /* Message */
-p {
-  font-size: 1.2rem;
-  margin-bottom: 30px;
+.delete-motorcycle-container p {
+  font-size: calc(0.5rem + 1vw);
+  line-height: normal;
+  margin-bottom: 2vw;
   text-align: center;
 }
 
@@ -67,18 +69,12 @@ p {
 
 @keyframes glow {
   from {
-    box-shadow:
-      0 0 2px #d89b74,
-      0 0 8px #f47e35,
-      0 0 10px #e35e0a,
+    box-shadow: 0 0 2px #d89b74, 0 0 8px #f47e35, 0 0 10px #e35e0a,
       0 0 20px #e35e0a;
   }
 
   to {
-    box-shadow:
-      0 0 5px #e35e0a,
-      0 0 10px #e35e0a,
-      0 0 15px #e35e0a,
+    box-shadow: 0 0 5px #e35e0a, 0 0 10px #e35e0a, 0 0 15px #e35e0a,
       0 0 20px #e35e0a;
   }
 }
