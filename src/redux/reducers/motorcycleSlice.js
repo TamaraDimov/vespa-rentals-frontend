@@ -14,14 +14,14 @@ export const fetchMotorcycle = createAsyncThunk(
           headers: {
             Authorization: `Bearer ${token}`,
           },
-        }
+        },
       );
       const dataJson = motorcycleData.json();
       return dataJson;
     } catch (error) {
       return error;
     }
-  }
+  },
 );
 
 export const fetchUser = createAsyncThunk('get/fetchUser', async (token) => {
@@ -32,7 +32,7 @@ export const fetchUser = createAsyncThunk('get/fetchUser', async (token) => {
         headers: {
           Authorization: `Bearer ${token}`,
         },
-      }
+      },
     );
     const dataJson = motorcycleData.status;
     return dataJson;
@@ -51,14 +51,14 @@ export const fetchSpecificMotorcycle = createAsyncThunk(
           headers: {
             Authorization: `Bearer ${data.user.token}`,
           },
-        }
+        },
       );
       const dataJson = motorcycleData.json();
       return dataJson;
     } catch (error) {
       return error;
     }
-  }
+  },
 );
 
 export const deleteMotorcycle = createAsyncThunk(
@@ -77,7 +77,7 @@ export const deleteMotorcycle = createAsyncThunk(
     } catch (error) {
       return error;
     }
-  }
+  },
 );
 
 export const adddMotorcycle = createAsyncThunk(
@@ -93,14 +93,14 @@ export const adddMotorcycle = createAsyncThunk(
             'Content-Type': 'application/json',
           },
           body: JSON.stringify(params),
-        }
+        },
       );
       const dataJson = motorcycleData.status;
       return dataJson;
     } catch (error) {
       return error;
     }
-  }
+  },
 );
 
 const motorcycleSlice = createSlice({
