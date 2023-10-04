@@ -1,12 +1,13 @@
 {
   "files": {
-    "main.css": "/static/css/main.7125903b.css",
-    "main.js": "/static/js/main.445eb424.js",
+    "main.css": "/static/css/main.c1791a5b.css",
+    "main.js": "/static/js/main.8b80b55d.js",
     "static/media/home-bg.jpg": "/static/media/home-bg.c178d66efbe1c28bbfd7.jpg",
     "static/media/Reserve-list.jpg": "/static/media/Reserve-list.cc6934c1612e2ccc0eb2.jpg",
     "static/media/bg.jpg": "/static/media/bg.8f48effa177418fa4445.jpg",
     "static/media/Reserve bg.jpg": "/static/media/Reserve bg.39ba32a1f681177b928f.jpg",
     "static/media/Delete_bg.jpg": "/static/media/Delete_bg.5f496b0cf1433bcc8f1f.jpg",
+    "static/media/details_bg.jpg": "/static/media/details_bg.b4d00584ebeb900b284f.jpg",
     "static/media/Poppins-Regular.ttf": "/static/media/Poppins-Regular.1c701c9a6b587802e3d0.ttf",
     "static/media/Poppins-Medium.ttf": "/static/media/Poppins-Medium.b59f6a636397975c5409.ttf",
     "static/media/Poppins-SemiBold.ttf": "/static/media/Poppins-SemiBold.5981b450a68d5134225b.ttf",
@@ -14,11 +15,11 @@
     "static/media/logo.png": "/static/media/logo.39f57de7c75b7679c7f6.png",
     "static/media/vespa.png": "/static/media/vespa.a97600cd7d82394bb12a.png",
     "index.html": "/index.html",
-    "main.7125903b.css.map": "/static/css/main.7125903b.css.map",
-    "main.445eb424.js.map": "/static/js/main.445eb424.js.map"
+    "main.c1791a5b.css.map": "/static/css/main.c1791a5b.css.map",
+    "main.8b80b55d.js.map": "/static/js/main.8b80b55d.js.map"
   },
   "entrypoints": [
-    "static/css/main.7125903b.css",
-    "static/js/main.445eb424.js"
+    "static/css/main.c1791a5b.css",
+    "static/js/main.8b80b55d.js"
   ]
 }
