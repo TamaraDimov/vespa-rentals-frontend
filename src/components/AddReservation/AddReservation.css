@@ -2,8 +2,6 @@
   border: 0.5px solid #ffffff94;
   background: url(../../assets/Reserve\ bg.jpg);
   background-color: #e3a20a53;
-
-  /* background-blend-mode: color-burn; */
   background-size: cover;
   background-attachment: fixed;
   background-repeat: no-repeat;
@@ -14,7 +12,9 @@
 .reservation-form {
   display: flex;
   flex-direction: column;
-  width: 550px;
+  align-items: center;
+  justify-content: center;
+  width: 60vw;
   margin: 15% auto;
   padding: 3%;
   background: #230b0093;
@@ -23,16 +23,19 @@
 }
 
 .reservation-form label {
-  font-size: 1.2rem;
+  font-size: calc(0.6rem + 1vw);
   font-weight: bold;
   color: white;
   line-height: 2rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
 }
 
 .reservation-form input,
 .reservation-form select {
   width: 100%;
-  font-size: 1.2rem;
+  font-size: calc(0.6rem + 1vw);
   padding: 10px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
@@ -108,14 +111,14 @@
   }
 
   .form-select#motorcycle_id {
-    width: 30%;
+    width: 50%;
   }
 }
 
 /* Other styles */
 
 .form-input {
-  padding: 0.5rem;
+  padding: calc(0.3rem + 1vw);
   font-size: 1rem;
 }
 
