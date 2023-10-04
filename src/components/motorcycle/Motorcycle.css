@@ -191,3 +191,21 @@
     max-width: 300px;
   }
 }
+
+@media (min-width: 1320px) {
+  .latest-model-title {
+    font-size: 3vw;
+    font-weight: bold;
+    margin-top: 2px;
+    margin-bottom: 15px;
+    text-align: center;
+  }
+
+  .latest-models-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    overflow-y: auto;
+    height: 670px;
+  }
+}
