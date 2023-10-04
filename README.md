@@ -211,7 +211,7 @@ _In order to run this project you need:_
 
 ### Install
 
-Install thr project dependencies with:
+Install the project dependencies with:
 
 ```
   npm install
@@ -260,12 +260,23 @@ You can deploy this project using:
 
 ### Install
 
-Install thr project dependencies with:
+Install the project dependencies with:
 
 ```
   bundle install
   rails db:create
   rails db:migrate
+```
+
+- And Make sure to delete the Master key and credentials.yml.enc
+- Here are the steps needed to create your own Credentials.
+- Edit Open your terminal or command prompt.
+- Navigate to the root directory of your Ruby on Rails application.
+
+Run the following command:
+   
+```
+rails credentials:edit command: 
 ```
 
 ### Usage<a name="usage"></a>

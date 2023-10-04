@@ -226,3 +226,7 @@ textarea::placeholder {
 .span-3dbutton button:hover {
   transform: translateZ(-25px) rotateX(-90deg);
 }
+
+@media only screen and (max-width: 768px) {
+  /* For later Usage */
+}
