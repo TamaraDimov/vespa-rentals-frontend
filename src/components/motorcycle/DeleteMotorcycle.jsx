@@ -41,7 +41,7 @@ const DeleteMotorcycle = () => {
     <section className="delete-motorcycle-bg">
       <div className="delete-motorcycle-container overflow-hidden relative">
         {confirm && (
-          <PopDelete id={id} confirm={confirm} setConfirm={setConfirm} />
+          <PopDelete id={id} confirm={confirm} setConfirm={setConfirm} setCurr={setCurr} />
         )}
         <h1>Available motorcycles</h1>
         <p className="text-slate-800 hover:text-black-600">{message}</p>
@@ -104,8 +104,8 @@ const DeleteMotorcycle = () => {
           <div className="flex items-center justify-center gap-2">
             {Array.isArray(motorcycles.motorcycle)
               && motorcycles.motorcycle.map((motorcycle, i) => (
-                // eslint-disable-next-line react/jsx-key
                 <div
+                  key={motorcycle.id}
                   className={`
               transition-all w-3 h-3 bg-black rounded-full
               ${curr === i ? 'p-2' : 'bg-opacity-50'}

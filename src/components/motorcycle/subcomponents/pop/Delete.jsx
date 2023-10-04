@@ -5,7 +5,9 @@ import Modal from 'react-bootstrap/Modal';
 import { deleteMotorcycle } from '../../../../redux/reducers/motorcycleSlice';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function PopDelete({ id, confirm, setConfirm }) {
+export default function PopDelete({
+  id, confirm, setConfirm, setCurr,
+}) {
   const dispatch = useDispatch();
 
   return (
@@ -25,6 +27,7 @@ export default function PopDelete({ id, confirm, setConfirm }) {
             onClick={() => {
               dispatch(deleteMotorcycle(id));
               setConfirm(!confirm);
+              setCurr((curr) => (curr === 0 ? 0 : curr - 1));
             }}
           >
             Delete
@@ -39,4 +42,5 @@ PopDelete.propTypes = {
   id: PropTypes.number.isRequired,
   confirm: PropTypes.bool.isRequired,
   setConfirm: PropTypes.func.isRequired,
+  setCurr: PropTypes.func.isRequired,
 };
