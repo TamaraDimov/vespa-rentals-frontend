@@ -200,7 +200,7 @@
   }
 
   .detail-motor-image {
-    width: 90%;
+    width: 80%;
     margin: 0 auto;
   }
 
@@ -211,6 +211,36 @@
   .detail-motor-desc {
     font-size: 3.5vw; /* Responsive font size */
     margin-top: 6%;
+    background-color: black;
+  }
+
+  .details-page-title {
+    padding: 3%;
+    font-size: 6vw;
+    color: rgb(255, 112, 23);
+    font-family: 'Playgram', sans-serif;
+    background-color: black;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 500px) {
+  .detail-motor-container {
+    flex-direction: column;
+    gap: 2%;
+  }
+
+  .detail-motor-image {
+    width: 50%;
+    margin: 1% auto 1%;
+  }
+
+  .detail-motor-name {
+    font-size: 4vw;
+  }
+
+  .detail-motor-desc {
+    font-size: 3vw; /* Responsive font size */
+    margin-top: 3%;
     background-color: black;
   }
 
