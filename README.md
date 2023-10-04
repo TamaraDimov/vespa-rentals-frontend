@@ -354,6 +354,8 @@ _If you like this project, please give it a ⭐️ !_
 
 - [Microverse](https://www.microverse.org/)
 
+- We would like to thank [Murat Korkmaz](https://www.behance.net/muratk) for the design guidelines.
+
 ## 📝 License <a name="license"></a>
 
 _This project is [MIT](./LICENSE) licensed._

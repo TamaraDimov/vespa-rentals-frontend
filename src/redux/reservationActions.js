@@ -1,6 +1,6 @@
 import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify';
-import API_URL from '../app/API_URL';
+import { API_URL } from '../app/API_URL';
 import { getUserFromLocalStorage } from '../helpers/LocalStorage';
 
 const userData = getUserFromLocalStorage();
