@@ -19,15 +19,14 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   max-width: 650px;
-  max-height: 900px;
   width: 100%;
 }
 
 /* Heading */
 .delete-motorcycle-container h1 {
-  font-size: calc(0.8rem + 2vw);
+  font-size: calc(0.5rem + 2vw);
   font-weight: bold;
-  margin-bottom: 2vw;
+  margin-bottom: 1vw;
   text-align: center;
 }
 
@@ -69,18 +68,12 @@
 
 @keyframes glow {
   from {
-    box-shadow:
-      0 0 2px #d89b74,
-      0 0 8px #f47e35,
-      0 0 10px #e35e0a,
+    box-shadow: 0 0 2px #d89b74, 0 0 8px #f47e35, 0 0 10px #e35e0a,
       0 0 20px #e35e0a;
   }
 
   to {
-    box-shadow:
-      0 0 5px #e35e0a,
-      0 0 10px #e35e0a,
-      0 0 15px #e35e0a,
+    box-shadow: 0 0 5px #e35e0a, 0 0 10px #e35e0a, 0 0 15px #e35e0a,
       0 0 20px #e35e0a;
   }
 }
@@ -114,4 +107,13 @@
 .del-btn-danger:hover {
   background-color: #e3200a;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .delete-motorcycle-container h1 {
+    font-size: calc(0.8rem + 2vw);
+    font-weight: bold;
+    margin-bottom: 1vw;
+    text-align: center;
+  }
 }
