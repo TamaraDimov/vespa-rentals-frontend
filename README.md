@@ -132,7 +132,7 @@ _**Reservations:**_
 
 ## 🚀 Live Demo
 
-To see this project's live demo, please (click here)[https://rent-motorcycles.onrender.com].
+To see this project's live demo, please click [here](https://rent-motorcycles.onrender.com).
 
 ## 🧾 Database Structure: <a name="erd"></a>
 
@@ -353,6 +353,8 @@ _If you like this project, please give it a ⭐️ !_
 ## Acknowledgments
 
 - [Microverse](https://www.microverse.org/)
+
+- We would like to thank [Murat Korkmaz](https://www.behance.net/muratk) for the design guidelines.
 
 ## 📝 License <a name="license"></a>
 

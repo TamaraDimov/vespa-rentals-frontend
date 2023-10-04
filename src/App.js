@@ -57,15 +57,13 @@ const router = createBrowserRouter([
   },
 ]);
 
-function App() {
-  return (
-    <div className="App">
-      <Provider store={store}>
-        <RouterProvider router={router} />
-        <ToastContainer />
-      </Provider>
-    </div>
-  );
-}
+const App = () => (
+  <div className="App">
+    <Provider store={store}>
+      <RouterProvider router={router} />
+      <ToastContainer />
+    </Provider>
+  </div>
+);
 
 export default App;
