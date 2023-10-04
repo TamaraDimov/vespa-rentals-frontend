@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { ChevronLeft, ChevronRight } from 'react-feather';
-
 import { fetchMotorcycle } from '../../redux/reducers/motorcycleSlice';
 import PopDelete from './subcomponents/pop/Delete';
 import './DeleteMotorcycle.css';
@@ -13,20 +12,15 @@ const DeleteMotorcycle = () => {
   const [id, setId] = useState();
   const { token } = user.user;
   const [curr, setCurr] = useState(0);
-
   const dispatch = useDispatch();
   const prev = () => setCurr((curr) => (curr === 0 ? motorcycles.motorcycle.length - 1 : curr - 1));
-
   const next = () => setCurr((curr) => (curr === motorcycles.motorcycle.length - 1 ? 0 : curr + 1));
-
   useEffect(() => {
     dispatch(fetchMotorcycle(token));
   }, [dispatch, token]);
-
   const handleConfirmation = () => {
     setConfirm(!confirm);
   };
-
   const available = motorcycles.motorcycle.length;
   const message = `We have ${available} motorcycle${
     available !== 1 ? 's' : ''
@@ -36,12 +30,16 @@ const DeleteMotorcycle = () => {
     ? 'Select a motorcycle down below to delete!'
     : 'No motorcycles are available!'
 }`;
-
   return (
     <section className="delete-motorcycle-bg">
       <div className="delete-motorcycle-container overflow-hidden relative">
         {confirm && (
-          <PopDelete id={id} confirm={confirm} setConfirm={setConfirm} setCurr={setCurr} />
+          <PopDelete
+            id={id}
+            confirm={confirm}
+            setConfirm={setConfirm}
+            setCurr={setCurr}
+          />
         )}
         <h1>Available motorcycles</h1>
         <p className="text-slate-800 hover:text-black-600">{message}</p>
@@ -118,5 +116,4 @@ const DeleteMotorcycle = () => {
     </section>
   );
 };
-
 export default DeleteMotorcycle;

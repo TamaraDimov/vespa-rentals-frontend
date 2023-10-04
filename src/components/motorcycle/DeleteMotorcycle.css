@@ -19,15 +19,14 @@
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   max-width: 650px;
-  max-height: 900px;
   width: 100%;
 }
 
 /* Heading */
 .delete-motorcycle-container h1 {
-  font-size: calc(0.8rem + 2vw);
+  font-size: calc(0.5rem + 2vw);
   font-weight: bold;
-  margin-bottom: 2vw;
+  margin-bottom: 1vw;
   text-align: center;
 }
 
@@ -114,4 +113,13 @@
 .del-btn-danger:hover {
   background-color: #e3200a;
   color: #fff;
+}
+
+@media (max-width: 768px) {
+  .delete-motorcycle-container h1 {
+    font-size: calc(0.8rem + 2vw);
+    font-weight: bold;
+    margin-bottom: 1vw;
+    text-align: center;
+  }
 }
