@@ -169,7 +169,7 @@ _We used a Kanban board to track the progress of tasks and issues. The board is 
 
 <img src="./init kanban .png" alt="initial state of the kanban board" width="auto"  height="auto" />
 
-  </details>Final State;</summary>
+  </details>Final State</summary>
 
   <details>
     
