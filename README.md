@@ -130,7 +130,7 @@ _**Reservations:**_
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 🚀 Live Demo
+## 🚀 Live Demo <a name="Live-Demo"></a>
 
 To see this project's live demo, please click [here](https://rent-motorcycles.onrender.com).
 
@@ -148,7 +148,7 @@ To see this project's live demo, please click [here](https://rent-motorcycles.on
 
 [](https://github.com/TamaraDimov/vespa-rentals-backend)
 
-<img src="">
+<img src="./schema.png" alt="Schema diagram" width="auto"  height="auto" />
 
 ## 📄 Project Documentation <a name="project-documentation"></a>
 
@@ -306,7 +306,7 @@ You can deploy this project using:
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-## 👥 Authors / Team members <a name="author"></a>
+## 👥 Authors / Team members <a name="authors"></a>
 
 👤 **Tamara Dimov**
 
@@ -350,7 +350,7 @@ _Feel free to check the [issues page](https://github.com/TamaraDimov/vespa-renta
 
 _If you like this project, please give it a ⭐️ !_
 
-## Acknowledgments
+## Acknowledgments <a name="acknowledgements"></a>
 
 - [Microverse](https://www.microverse.org/)
 
