@@ -169,13 +169,13 @@ _We used a Kanban board to track the progress of tasks and issues. The board is 
 
 <img src="./init kanban .png" alt="initial state of the kanban board" width="auto"  height="auto" />
 
-  </details>Final State</summary>
+</details>
 
-  <details>
-    
+<details>
+    <summary>Final State</summary>
+
 <img src="./final kanban.png" alt="final state of the kanban board" width="auto"  height="auto" />
 
-  </details>
 </details>
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
