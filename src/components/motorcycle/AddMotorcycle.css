@@ -1,0 +1,395 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+  --color-red: #ec1840;
+
+  /* --color-purple: #7a18ec; */
+  --color-orange: #fa5300;
+  --color-white: #fff;
+  --color-black-1: #111;
+  --color-black-2: #222;
+  --color-black-3: #444;
+  --speed-normal: 0.5s;
+  --speed-fast: 0.8s;
+}
+
+.add-motorcycle-bg {
+  background: url('../../assets/bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  height: 100vh;
+  color: white;
+}
+
+.add-motorcycle-container {
+  padding: 4%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-title2 {
+  width: 70%;
+  border-radius: 2rem;
+  text-align: center;
+  font-family: Poppins-Bold, sans-serif;
+  font-size: calc(0.7rem + 3vh);
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.533);
+  padding: 2.5%;
+}
+
+.form-2 {
+  font-size: calc(0.5rem + 1vw);
+  margin-top: 2%;
+  width: 60vw;
+  max-width: 700px;
+  border: 4px solid #f07900;
+  background: rgba(0, 0, 0, 0.509);
+  border-radius: 2rem;
+  box-shadow: 0 4px 6px -1px #9854001a, 0 2px 4px -1px #0000000f;
+  padding: 3vw 4vw;
+  transition: 0.3s ease-in-out all;
+  color: white;
+  display: flex;
+  flex-direction: column;
+}
+
+.form2:hover {
+  box-shadow: 0 20px 25px -5px #ba0d0d1a, 0 10px 10px -5px #0000000a;
+}
+
+/* ------------------------------------------------------------------
+[ Input ] */
+
+input {
+  outline: none;
+  border: none;
+}
+
+.wrap-input1002 {
+  width: 100%;
+  position: relative;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.24);
+  margin-bottom: 3vw;
+}
+
+.input1002 {
+  font-family: Poppins-Regular, sans-serif;
+  color: #fff;
+  line-height: 1.2;
+  display: block;
+  width: 100%;
+  height: calc(3vw + 2vh);
+  background: transparent;
+  padding: 0 5vw 0 5vw;
+}
+
+.input1002::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+/* --------------------------------------------- */
+.focus-input1002 {
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.focus-input1002 .input-icon2 {
+  position: absolute;
+  top: 9px;
+  left: 7px;
+  transition: all 0.4s;
+  font-size: calc(2vw + 0.5rem);
+}
+
+.focus-input1002::before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  background: #fff;
+}
+
+.focus-input1002::after {
+  color: #fff;
+  display: block;
+  width: 100%;
+  position: absolute;
+  top: 6px;
+  left: 0;
+  padding-left: 5px;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+}
+
+.input1002:focus {
+  padding-left: 5px;
+}
+
+.input1002:focus + .focus-input1002::after,
+.input1002:focus + .focus-input1002 .input-icon2 {
+  top: -20px;
+  font-size: calc(2vw + 0.3rem);
+}
+
+.custom-textarea {
+  width: 100%;
+  height: 15vh;
+  padding: 1.2vw;
+  border: 2px solid #ccc;
+  background-color: rgba(0, 0, 0, 0.181);
+  border-radius: 5px;
+  transition: border-color 0.3s ease;
+  color: white;
+}
+
+textarea:focus,
+textarea:active {
+  border: 3px solid #ff6b10;
+  outline: none;
+}
+
+textarea::placeholder {
+  color: white;
+}
+
+.d3button-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 3% 1%;
+}
+
+.span-3dbutton {
+  position: relative;
+  display: inline-flex;
+  width: 18vw;
+  height: 8vh;
+  margin: 0 auto;
+  perspective: 1000px;
+  align-self: center;
+  font-size: calc(0.2rem + 2vw);
+}
+
+.span-3dbutton button {
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform 0.25s;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #ed5b00;
+}
+
+.span-3dbutton button::before,
+.span-3dbutton button::after {
+  position: absolute;
+  content: 'Submit';
+  height: calc(1.4rem + 3vw);
+  width: 20vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  border-radius: 10px;
+  color: #ed5b00;
+  background-color: #fff;
+  border: 4px solid rgb(255, 111, 50);
+  transform: rotateY(0deg) translateZ(25px);
+}
+
+.span-3dbutton button::after {
+  color: #fff;
+  background-color: #ed5b00;
+  border: 4px solid rgb(255, 255, 255);
+  transform: rotateX(90deg) translateZ(25px);
+}
+
+.span-3dbutton button:hover {
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+
+@media only screen and (max-width: 768px) {
+  .form-title2 {
+    width: 70%;
+    border-radius: 2rem;
+    text-align: center;
+    font-family: Poppins-Bold, sans-serif;
+    font-size: calc(0.5rem + 2vh);
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.533);
+    padding: 2.5%;
+  }
+
+  .input1002 {
+    font-family: Poppins-Regular, sans-serif;
+    color: #fff;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+    height: calc(3vw + 2vh);
+    background: transparent;
+    padding: 0 6vw 0 8vw;
+  }
+
+  .form-2 {
+    font-size: calc(0.6rem + 1vw);
+    margin-top: 2%;
+    width: 70vw;
+    height: auto;
+  }
+
+  .focus-input1002 .input-icon2 {
+    position: absolute;
+    top: 5px;
+    left: 5px;
+    transition: all 0.4s;
+    font-size: calc(2vw + 0.5rem);
+  }
+
+  .input1002:focus + .focus-input1002::after,
+  .input1002:focus + .focus-input1002 .input-icon2 {
+    top: -20px;
+    font-size: calc(2vw + 0.3rem);
+  }
+
+  /* For later Usage */
+}
+
+@media only screen and (min-width: 1200px) {
+  .form-2 {
+    font-size: calc(0.5rem + 1vw);
+    margin-top: 1%;
+    width: 60vw;
+    padding: 2vw 3.5vw;
+  }
+
+  .wrap-input1002 {
+    width: 100%;
+    position: relative;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.24);
+    margin-bottom: 2vw;
+  }
+
+  .input1002 {
+    font-family: Poppins-Regular, sans-serif;
+    color: #fff;
+    line-height: 1.2;
+    display: block;
+    width: 100%;
+    height: calc(2.5vw + 2vh);
+    background: transparent;
+    padding: 0 4vw 0 4vw;
+  }
+
+  /* --------------------------------------------- */
+
+  .focus-input1002 .input-icon2 {
+    position: absolute;
+    top: 9px;
+    left: 7px;
+    transition: all 0.4s;
+    font-size: calc(1.5vw + 0.5rem);
+  }
+
+  .input1002:focus {
+    padding-left: 5px;
+  }
+
+  .input1002:focus + .focus-input1002::after,
+  .input1002:focus + .focus-input1002 .input-icon2 {
+    top: -20px;
+    font-size: calc(2vw + 0.3rem);
+  }
+
+  .custom-textarea {
+    width: 100%;
+    height: 15vh;
+    padding: 1vw;
+    border: 2px solid #ccc;
+    background-color: rgba(0, 0, 0, 0.181);
+    border-radius: 5px;
+    transition: border-color 0.3s ease;
+    color: white;
+  }
+
+  textarea:focus,
+  textarea:active {
+    border: 3px solid #ff6b10;
+    outline: none;
+  }
+
+  textarea::placeholder {
+    color: white;
+  }
+
+  .d3button-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3% 1% 5% 1%;
+  }
+
+  .span-3dbutton {
+    position: relative;
+    display: inline-flex;
+    width: 18vw;
+    height: 7vh;
+    margin: 0 auto;
+    perspective: 100px;
+    align-self: center;
+    font-size: calc(0.2rem + 2vw);
+  }
+
+  .span-3dbutton button {
+    letter-spacing: 1px;
+    transform-style: preserve-3d;
+    transform: translateZ(-25px);
+    transition: transform 0.25s;
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ed5b00;
+  }
+
+  .span-3dbutton button::before,
+  .span-3dbutton button::after {
+    position: absolute;
+    content: 'Submit';
+    height: calc(1.3rem + 2.7vw);
+    width: 18vw;
+    background-color: #fff;
+    border: 4px solid rgb(255, 111, 50);
+    transform: rotateY(0deg) translateZ(25px);
+  }
+
+  .span-3dbutton button::after {
+    color: #fff;
+    background-color: #ed5b00;
+    border: 4px solid rgb(255, 255, 255);
+    transform: rotateX(90deg) translateZ(25px);
+  }
+
+  .span-3dbutton button:hover {
+    transform: translateZ(-25px) rotateX(-90deg);
+  }
+
+  .fade {
+    margin-bottom: 1px;
+  }
+}

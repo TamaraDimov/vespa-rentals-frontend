@@ -1,0 +1,148 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DeleteMotorcycle should match the snapshot 1`] = `
+<section
+  className="delete-motorcycle-bg"
+>
+  <div
+    className="delete-motorcycle-container overflow-hidden relative"
+  >
+    <h1>
+      Available motorcycles
+    </h1>
+    <p
+      className="text-slate-800 hover:text-black-600"
+    >
+      We have 2 motorcycles available.
+  Select a motorcycle down below to delete!
+    </p>
+    <div
+      className="delete-motorcycle-list-all flex transition-transform ease-out duration-500"
+      style={
+        Object {
+          "transform": "translateX(-0%)",
+        }
+      }
+    >
+      <div
+        className="delete-motorcycle-list flex-none w-full opacity-100 transition-opacity duration-500"
+      >
+        <li>
+          <img
+            alt="CBR600RR"
+            className="w-full h-full object-cover"
+            src="https://example.com/photo1.jpg"
+          />
+          <div>
+            <h2>
+              Honda CBR600RR
+            </h2>
+            <p>
+              Description for Honda CBR600RR
+            </p>
+            <button
+              className="del-btn-danger z-10"
+              onClick={[Function]}
+              type="button"
+            >
+              Delete
+            </button>
+          </div>
+        </li>
+      </div>
+      <div
+        className="delete-motorcycle-list flex-none w-full hidden opacity-0 transition-opacity duration-500"
+      >
+        <li>
+          <img
+            alt="YZF-R6"
+            className="w-full h-full object-cover"
+            src="https://example.com/photo2.jpg"
+          />
+          <div>
+            <h2>
+              Yamaha YZF-R6
+            </h2>
+            <p>
+              Description for Yamaha YZF-R6
+            </p>
+            <button
+              className="del-btn-danger z-10"
+              onClick={[Function]}
+              type="button"
+            >
+              Delete
+            </button>
+          </div>
+        </li>
+      </div>
+    </div>
+    <div
+      className="inset-0 flex items-center justify-between p-3"
+    >
+      <button
+        className="p-1 rounded-full shadow bg-black/80 text-white hover:bg-gray-500"
+        onClick={[Function]}
+        type="button"
+      >
+        <svg
+          fill="none"
+          height={24}
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polyline
+            points="15 18 9 12 15 6"
+          />
+        </svg>
+      </button>
+      <button
+        className="p-1 rounded-full shadow bg-black/80 text-white hover:bg-gray-500"
+        onClick={[Function]}
+        type="button"
+      >
+        <svg
+          fill="none"
+          height={24}
+          stroke="currentColor"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+          strokeWidth="2"
+          viewBox="0 0 24 24"
+          width={24}
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <polyline
+            points="9 18 15 12 9 6"
+          />
+        </svg>
+      </button>
+    </div>
+    <div
+      className="absolute bottom-4 right-0 left-0"
+    >
+      <div
+        className="flex items-center justify-center gap-2"
+      >
+        <div
+          className="
+              transition-all w-3 h-3 bg-black rounded-full
+              p-2
+            "
+        />
+        <div
+          className="
+              transition-all w-3 h-3 bg-black rounded-full
+              bg-opacity-50
+            "
+        />
+      </div>
+    </div>
+  </div>
+</section>
+`;

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navlinks component renders correctly 1`] = `
+<div
+  className="nav-links"
+>
+  <a
+    className="nav-link"
+    href="/motorcycles"
+    onClick={[Function]}
+  >
+    Models
+  </a>
+  <a
+    className="nav-link"
+    href="/reservations/new"
+    onClick={[Function]}
+  >
+    Book a ride
+  </a>
+  <a
+    className="nav-link"
+    href="/reservations"
+    onClick={[Function]}
+  >
+    My Reservations
+  </a>
+  <a
+    className="nav-link"
+    href="/motorcycles/new"
+    onClick={[Function]}
+  >
+    ADD Motorcycle
+  </a>
+  <a
+    className="nav-link"
+    href="/motorcycles/delete-motorcycles"
+    onClick={[Function]}
+  >
+    DELETE Motorcycle
+  </a>
+</div>
+`;

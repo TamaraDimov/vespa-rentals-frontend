@@ -1,0 +1,254 @@
+@import url('https://fonts.cdnfonts.com/css/playgram');
+
+.details-page-container {
+  background: url(../../../assets/details_bg.jpg);
+  backface-visibility: visible;
+  height: 100vh;
+  color: white;
+  text-align: center;
+}
+
+.details-page-title {
+  padding-top: 10%;
+  padding-bottom: 2%;
+  font-size: 4rem;
+  color: rgb(255, 112, 23);
+  font-family: 'Playgram', sans-serif;
+  background-color: black;
+}
+
+.detail-motor-container {
+  display: flex;
+  gap: 5%;
+  border: 2px solid white;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: black;
+  border-radius: 20px;
+}
+
+.detail-motor-image {
+  width: 50%;
+  border-radius: 20px;
+}
+
+.detail-motor-detail-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.detail-motor-name {
+  font-size: 4vw; /* Responsive font size */
+  padding: 2%;
+  width: 100%;
+  border-radius: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  color: rgb(255, 112, 23);
+}
+
+.detail-motor-model {
+  font-size: 1.6rem; /* Responsive font size */
+  font-weight: 600;
+  margin-bottom: 10px;
+  background-color: white;
+  color: black;
+}
+
+.detail-motor-desc {
+  font-size: 2rem; /* Responsive font size */
+  margin-top: 15%;
+  background-color: black;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+}
+
+.social-icons img {
+  width: 2.4vw; /* Responsive image size */
+  height: 2.4vw; /* Responsive image size */
+  margin: 0 0.5vw; /* Responsive margin */
+}
+
+.nice-button {
+  font-family: 'Playgram', sans-serif;
+  font-size: 1.2rem; /* Responsive font size */
+  position: relative;
+  display: inline-block;
+  padding: 2.5vw 3vw; /* Responsive padding */
+  margin: 4vw 0; /* Responsive margin */
+  color: rgb(255, 112, 23);
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.4vw; /* Responsive letter spacing */
+  overflow: hidden;
+}
+
+.nice-button:hover {
+  color: #050801;
+  background: rgb(255, 112, 23);
+  box-shadow:
+    0 0 0.5vw rgb(255, 112, 23),
+    0 0 2.5vw rgb(255, 112, 23),
+    0 0 5vw rgb(255, 112, 23),
+    0 0 20vw rgb(255, 112, 23);
+  -webkit-box-reflect: below 0.1vw linear-gradient(transparent, #0005);
+}
+
+/* Rest of the animation styles */
+
+.nice-button span {
+  position: absolute;
+  display: block;
+}
+
+.nice-button span:nth-child(1) {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, rgb(255, 112, 23));
+  animation: animate1 1s linear infinite;
+}
+
+@keyframes animate1 {
+  0% {
+    left: -100%;
+  }
+
+  50%,
+  100% {
+    left: 100%;
+  }
+}
+
+.nice-button span:nth-child(2) {
+  top: -100%;
+  right: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(180deg, transparent, rgb(255, 112, 23));
+  animation: animate2 1s linear infinite;
+  animation-delay: 0.25s;
+}
+
+@keyframes animate2 {
+  0% {
+    top: -100%;
+  }
+
+  50%,
+  100% {
+    top: 100%;
+  }
+}
+
+.nice-button span:nth-child(3) {
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(270deg, transparent, rgb(255, 112, 23));
+  animation: animate3 1s linear infinite;
+  animation-delay: 0.5s;
+}
+
+@keyframes animate3 {
+  0% {
+    right: -100%;
+  }
+
+  50%,
+  100% {
+    right: 100%;
+  }
+}
+
+.nice-button span:nth-child(4) {
+  bottom: -100%;
+  left: 0;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(360deg, transparent, rgb(255, 112, 23));
+  animation: animate4 1s linear infinite;
+  animation-delay: 0.75s;
+}
+
+@keyframes animate4 {
+  0% {
+    bottom: -100%;
+  }
+
+  50%,
+  100% {
+    bottom: 100%;
+  }
+}
+
+/* Media query for smaller screen sizes */
+@media (max-width: 768px) {
+  .detail-motor-container {
+    flex-direction: column;
+    gap: 2%;
+  }
+
+  .detail-motor-image {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  .detail-motor-name {
+    font-size: 5vw;
+  }
+
+  .detail-motor-desc {
+    font-size: 3.5vw; /* Responsive font size */
+    margin-top: 6%;
+    background-color: black;
+  }
+
+  .details-page-title {
+    padding: 3%;
+    font-size: 6vw;
+    color: rgb(255, 112, 23);
+    font-family: 'Playgram', sans-serif;
+    background-color: black;
+  }
+}
+
+@media (max-width: 768px) and (min-width: 500px) {
+  .detail-motor-container {
+    flex-direction: column;
+    gap: 2%;
+  }
+
+  .detail-motor-image {
+    width: 50%;
+    margin: 1% auto 1%;
+  }
+
+  .detail-motor-name {
+    font-size: 4vw;
+  }
+
+  .detail-motor-desc {
+    font-size: 3vw; /* Responsive font size */
+    margin-top: 3%;
+    background-color: black;
+  }
+
+  .details-page-title {
+    padding: 3%;
+    font-size: 6vw;
+    color: rgb(255, 112, 23);
+    font-family: 'Playgram', sans-serif;
+    background-color: black;
+  }
+}
