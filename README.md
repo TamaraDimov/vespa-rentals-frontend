@@ -167,13 +167,13 @@ _We used a Kanban board to track the progress of tasks and issues. The board is 
   <details>
     <summary>Initial State</summary>
 
-<img src="./init kanban .png" alt="logo" width="auto"  height="auto" />
+<img src="./init kanban .png" alt="initial state of the kanban board" width="auto"  height="auto" />
 
   </details>Final State;</summary>
 
   <details>
     
-<img src="" alt="logo" width="auto"  height="auto" />
+<img src="./final kanban.png" alt="final state of the kanban board" width="auto"  height="auto" />
 
   </details>
 </details>
@@ -274,9 +274,9 @@ Install the project dependencies with:
 - Navigate to the root directory of your Ruby on Rails application.
 
 Run the following command:
-   
+
 ```
-rails credentials:edit command: 
+rails credentials:edit command:
 ```
 
 ### Usage<a name="usage"></a>
