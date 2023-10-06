@@ -102,6 +102,17 @@
   -webkit-box-reflect: below 0.1vw linear-gradient(transparent, #0005);
 }
 
+.nice-button-home {
+  color: #050801;
+  background: rgb(255, 112, 23);
+  box-shadow:
+    0 0 0.5vw rgb(255, 112, 23),
+    0 0 2.5vw rgb(255, 112, 23),
+    0 0 5vw rgb(255, 112, 23),
+    0 0 20vw rgb(255, 112, 23);
+  -webkit-box-reflect: below 0.1vw linear-gradient(transparent, #0005);
+}
+
 /* Rest of the animation styles */
 
 .nice-button span {

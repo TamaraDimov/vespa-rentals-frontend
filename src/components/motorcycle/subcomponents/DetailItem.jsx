@@ -7,8 +7,8 @@ export default function Item({
 }) {
   const navigate = useNavigate();
 
-  const handleBackToHome = () => {
-    navigate(-1); // Go back to the previous page
+  const handleBackToReserve = () => {
+    navigate('../../reservations/new/');
   };
 
   return (
@@ -18,13 +18,17 @@ export default function Item({
         <p className="detail-motor-name">{name}</p>
         <p className="detail-motor-model">{model}</p>
         <p className="detail-motor-desc">{description}</p>
-        <div className="social-icons">
-          <button type="button" className="nice-button" onClick={handleBackToHome}>
+        <div className="social-icons" style={{ marginLeft: '10px' }}>
+          <button
+            type="button"
+            className="nice-button"
+            onClick={handleBackToReserve}
+          >
             <span> </span>
             <span> </span>
             <span> </span>
             <span> </span>
-            Back To Home
+            Reserve
           </button>
         </div>
       </div>
