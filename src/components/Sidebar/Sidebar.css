@@ -1,111 +1,139 @@
 :root {
   --main-color: #d84800;
   --body-font: 'Poppins-Regular';
+  --sidebar-bg: linear-gradient(135deg, #fff 60%, #ffe5d0 100%);
+  --sidebar-glass: rgba(255,255,255,0.85);
+  --sidebar-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.15);
+  --sidebar-border: 1px solid rgba(255,255,255,0.18);
 }
 
 .show-sidebar {
   height: 100vh;
-  min-width: 200px;
-  width: 20vw;
-  max-width: 300px;
-  background-color: #fff;
-  box-shadow: 0 0 50px rgb(255, 255, 255);
+  min-width: 220px;
+  width: 22vw;
+  max-width: 320px;
+  background: var(--sidebar-bg);
+  box-shadow: var(--sidebar-shadow);
+  border-right: var(--sidebar-border);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  backdrop-filter: blur(6px);
+  transition: box-shadow 0.3s, background 0.3s;
+  border-radius: 0 24px 24px 0;
+  opacity: 0.97;
 }
 
 .show-sidebar header {
-  padding: 10%;
+  padding: 32px 0 16px 0;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #000000d8;
+  background: none;
 }
 
-.show-sidebar .social_links a {
-  font-size: 24px;
-  color: #000;
-  margin: 0 10px;
+.show-sidebar header img {
+  width: 120px;
+  height: 120px;
+  object-fit: contain;
+  border-radius: 50%;
+  background: #fff6f0;
+  box-shadow: 0 2px 12px #f3700c33;
+  padding: 12px;
+  border: 3px solid #fff;
 }
 
 .show-sidebar .nav-links {
-  padding: 20px 0;
-  font-size: calc(12px + 1.2vw);
+  padding: 24px 0;
+  font-size: calc(10px + 1vw);
   font-weight: 700;
 }
 
 .show-sidebar .nav-links a {
   display: block;
-  padding: 6px 6px 6px 15px;
-  color: #000;
+  padding: 12px 18px;
+  margin: 8px 12px;
+  color: #222;
+  background: #fff8f3;
+  border-radius: 12px;
   text-decoration: none;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px #f3700c11;
 }
 
 .show-sidebar .nav-links a:hover {
-  background-color: #f3590065;
+  background-color: #ffd6b8;
+  color: var(--main-color);
+  box-shadow: 0 2px 8px #f3700c22;
 }
 
 .show-sidebar .nav-links a.active {
   background-color: #f3700c;
-  color: #000;
-}
-
-.top-nav-container {
-  display: flex;
-  flex-direction: column;
+  color: #fff;
+  box-shadow: 0 2px 8px #f3700c44;
 }
 
 .logout-button {
-  margin: 0 auto;
+  margin: 0 auto 18px auto;
   width: 80%;
-  padding: 5% 2%;
-  background-color: #000;
+  padding: 12px 0;
+  background: linear-gradient(90deg, #f3700c 60%, #d84800 100%);
   color: #fff;
-  text-decoration: none;
-  font-size: 16px;
+  font-size: 17px;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  box-shadow: 0 2px 8px #f3700c22;
+  transition: background 0.2s, color 0.2s;
 }
 
 .logout-button:hover {
-  color: #fffffe;
-  background-color: red;
-  border: 2px solid red;
+  color: #fff;
+  background: #d84800;
+  border: 2px solid #f3700c;
+}
+
+.rating {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 18px auto;
+  width: 90%;
+  padding: 18px 0;
+  background: #fff;
+  border-radius: 18px;
+  box-shadow: 0 2px 12px #f3700c22;
+  transition: box-shadow 0.2s;
 }
 
 .footer {
   bottom: 0;
-  padding: 20px;
+  padding: 18px 0 10px 0;
   width: 100%;
-  background-color: #050000;
+  background: none;
 }
 
 .show-sidebar .social_links {
   text-align: center;
   margin: 0 auto;
   display: flex;
-  justify-content: space-between;
-  font-size: 1.4rem;
-  color: rgb(255, 255, 255);
-  transition: color 0.3s ease-in-out;
-}
-
-.show-sidebar .social_links :nth-child(1):hover {
-  color: #ff6200; /* Replace #ff0000 with your desired hover color */
-}
-
-.rating {
-  justify-self: flex-end;
-  display: flex;
   justify-content: center;
-  margin: 0 auto;
-  width: 80%;
-  padding: 10px 20px;
-  text-decoration: none;
-  font-size: 16px;
+  gap: 22px;
+  font-size: 1.7rem;
+  color: #f3700c;
+  transition: color 0.3s;
+}
+
+.show-sidebar .social_links svg {
   cursor: pointer;
-  border-radius: 10px;
+  transition: color 0.2s, transform 0.2s;
+}
+
+.show-sidebar .social_links svg:hover {
+  color: #d84800;
+  transform: scale(1.18) rotate(-8deg);
 }
 
 .hamburger-menu {
@@ -119,10 +147,22 @@
     top: 20px;
     left: 20px;
     z-index: 999;
-    font-size: 24px;
+    font-size: 28px;
     color: #fff;
-    background-color: transparent;
-    cursor: pointer;
+    background-color: var(--main-color);
+    border-radius: 50%;
+    width: 48px;
+    height: 48px;
+    border: none;
+    box-shadow: 0 2px 8px #f3700c44;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.2s;
+  }
+
+  .hamburger-menu:hover {
+    background: #d84800;
   }
 
   .show-sidebar {
@@ -132,109 +172,14 @@
     left: 0;
     height: 100vh;
     width: 100vw;
-    background-color: #fff;
-    box-shadow: 0 0 50px rgb(255, 255, 255);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    border-radius: 0;
+    background: var(--sidebar-bg);
+    box-shadow: var(--sidebar-shadow);
     transform: translateX(-100%);
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s cubic-bezier(.77,0,.18,1), box-shadow 0.3s;
   }
 
   .show-sidebar.show {
     transform: translateX(0);
-  }
-
-  .show-sidebar header {
-    padding: 10%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #000000d8;
-  }
-
-  .show-sidebar .social_links a {
-    font-size: 24px;
-    color: #000;
-    margin: 0 10px;
-  }
-
-  .show-sidebar .nav-links {
-    padding: 20px 0;
-    font-size: calc(12px + 1.2vw);
-    font-weight: 700;
-  }
-
-  .show-sidebar .nav-links a {
-    display: block;
-    padding: 6px 6px 6px 15px;
-    color: #000;
-    text-decoration: none;
-  }
-
-  .show-sidebar .nav-links a:hover {
-    background-color: #f3590065;
-  }
-
-  .show-sidebar .nav-links a.active {
-    background-color: #f3700c;
-    color: #000;
-  }
-
-  .top-nav-container {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .logout-button {
-    margin: 0 auto;
-    width: 80%;
-    padding: 5% 2%;
-    background-color: #000;
-    color: #fff;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
-  }
-
-  .logout-button:hover {
-    color: #fffffe;
-    background-color: red;
-    border: 2px solid red;
-  }
-
-  .footer {
-    bottom: 0;
-    padding: 20px;
-    width: 100%;
-    background-color: #050000;
-  }
-
-  .show-sidebar .social_links {
-    text-align: center;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    font-size: 1.4rem;
-    color: rgb(255, 255, 255);
-    transition: color 0.3s ease-in-out;
-  }
-
-  .show-sidebar .social_links :nth-child(1):hover {
-    color: #ff6200; /* Replace #ff0000 with your desired hover color */
-  }
-
-  .rating {
-    justify-self: flex-end;
-    display: flex;
-    justify-content: center;
-    margin: 0 auto;
-    width: 80%;
-    padding: 10px 20px;
-    text-decoration: none;
-    font-size: 16px;
-    cursor: pointer;
-    border-radius: 10px;
   }
 }

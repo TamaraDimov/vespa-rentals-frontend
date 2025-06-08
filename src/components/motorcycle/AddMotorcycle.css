@@ -276,7 +276,7 @@ textarea::placeholder {
 @media only screen and (min-width: 1200px) {
   .form-2 {
     font-size: calc(0.5rem + 1vw);
-    margin-top: 1%;
+    margin-top: 3%;
     width: 60vw;
     padding: 2vw 3.5vw;
   }
