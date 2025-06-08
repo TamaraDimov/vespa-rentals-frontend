@@ -54,7 +54,9 @@ const Reservations = () => {
                       <td className="res-td">{reservation.start_date}</td>
                       <td className="res-td">{reservation.end_date}</td>
                       <td className="res-td">{reservation.city}</td>
-                      <td className="res-td">{reservation.motorcycle.name}</td>
+                      <td className="res-td">
+                        {reservation.motorcycle?.name || 'Unknown Motorcycle'}
+                      </td>
                       <td className="res-td">
                         {reservations.status !== 'loading'
                           && reservation.id && (

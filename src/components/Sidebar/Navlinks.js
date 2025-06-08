@@ -1,9 +1,10 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import links from './links';
 
-// eslint-disable-next-line
-const NavLinks = ({ handleLinkClick }) => (
+// Provide a default no-op function for handleLinkClick
+const NavLinks = ({ handleLinkClick = () => {} }) => (
   <div className="nav-links">
     {links.map((link) => {
       const { text, id, path } = link;
@@ -23,5 +24,13 @@ const NavLinks = ({ handleLinkClick }) => (
     })}
   </div>
 );
+
+NavLinks.propTypes = {
+  handleLinkClick: PropTypes.func,
+};
+
+NavLinks.defaultProps = {
+  handleLinkClick: () => {},
+};
 
 export default NavLinks;
